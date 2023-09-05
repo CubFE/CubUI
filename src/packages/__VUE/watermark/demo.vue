@@ -1,0 +1,91 @@
+<template>
+  <div class="demo">
+    <h4>{{ translate('basic') }}</h4>
+    <cub-cell class="wrap">
+      <cub-button @click="showTextMark">{{ translate('btn1') }}</cub-button>
+      <cub-button @click="showImageMark">{{ translate('btn2') }}</cub-button>
+      <cub-watermark v-if="!flag" class="mark1" :z-index="1" content="cub-ui-water-mark"></cub-watermark>
+      <cub-watermark
+        v-if="flag"
+        class="mark1"
+        :image-width="60"
+        :image-height="23"
+        :z-index="1"
+        :image="imgSrc"
+      ></cub-watermark>
+    </cub-cell>
+    <h4>{{ translate('title2') }}</h4>
+    <cub-cell class="wrap wrap2">
+      <img :src="src" alt="" />
+      <cub-watermark :fullPage="false" font-color="#fa2c19" content="cub-ui"></cub-watermark>
+    </cub-cell>
+  </div>
+</template>
+<script lang="ts">
+import { ref, defineComponent } from 'vue';
+import { createComponent } from '@/packages/utils/create';
+const { translate } = createComponent('watermark');
+import { useTranslate } from '@/sites/assets/util/useTranslate';
+const initTranslate = () =>
+  useTranslate({
+    'zh-CN': {
+      basic: '基础用法',
+      title2: '局部用法',
+      btn1: '文字水印',
+      btn2: '图片水印'
+    },
+    'en-US': {
+      basic: 'Basic Usage',
+      title2: 'Part Usage',
+      btn1: 'Text Watermark',
+      btn2: 'Image Watermark'
+    }
+  });
+export default defineComponent({
+  props: {},
+  setup() {
+    initTranslate();
+    const src = ref('//img10.360buyimg.com/ling/jfs/t1/181258/24/10385/53029/60d04978Ef21f2d42/92baeb21f907cd24.jpg');
+    const imgSrc = ref(
+      '//img11.360buyimg.com/imagetools/jfs/t1/57345/6/20069/8019/62b995cdEd96fef03/51d3302dfeccd1d2.png'
+    );
+    const flag = ref(false);
+    const showTextMark = () => {
+      flag.value = false;
+    };
+    const showImageMark = () => {
+      flag.value = true;
+    };
+    return { translate, src, imgSrc, showTextMark, showImageMark, flag };
+  }
+});
+</script>
+<style lang="scss" scoped>
+.demo {
+  .wrap {
+    width: 100%;
+    height: 240px;
+    display: block;
+    position: relative;
+    background: #fff;
+
+    > img {
+      width: 100%;
+    }
+
+    .mark1 {
+      width: 100%;
+      top: 50px;
+    }
+
+    .cub-button {
+      margin-right: 10px;
+    }
+  }
+
+  .wrap2 {
+    position: relative;
+    z-index: 2;
+  }
+}
+</style>

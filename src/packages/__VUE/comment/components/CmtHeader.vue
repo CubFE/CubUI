@@ -1,0 +1,67 @@
+<template>
+  <view>
+    <view class="cub-comment-header" @click="handleClick" v-if="info">
+      <view class="cub-comment-header__user">
+        <view class="cub-comment-header__user-avter">
+          <img v-if="info.avatar" :src="info.avatar" />
+        </view>
+
+        <view :class="[`cub-comment-header__user-${type}`]" v-if="type == 'default'">
+          <view :class="[`cub-comment-header__user-${type}-name`]">
+            <span>{{ info.nickName }}</span>
+            <slot name="labels"></slot>
+          </view>
+
+          <view class="cub-comment-header__user-score">
+            <cub-rate v-model="info.score" size="12" spacing="5" readonly @change="handleClick" />
+          </view>
+        </view>
+
+        <view :class="[`cub-comment-header__user-${type}`]" v-else>
+          <span :class="[`cub-comment-header__user-${type}-name`]">{{ info.nickName }}</span>
+          <slot name="labels"></slot>
+        </view>
+      </view>
+      <view class="cub-comment-header__time" v-if="info.time">{{ info.time }}</view>
+    </view>
+    <view :class="[`cub-comment-header__${type}-score`]" v-if="type == 'complex'">
+      <cub-rate v-model="info.score" size="12" spacing="3" readonly />
+      <i :class="[`cub-comment-header__${type}-score-i`]"></i>
+      <view :class="[`cub-comment-header__${type}-score-size`]">{{ info.size }}</view>
+    </view>
+  </view>
+</template>
+<script lang="ts">
+import { createComponent } from '@/packages/utils/create';
+const { create } = createComponent('comment-header');
+import Rate from '../../rate/index.vue';
+
+export default create({
+  components: {
+    [Rate.name]: Rate
+  },
+  props: {
+    type: {
+      type: String,
+      default: 'default' // default，complex
+    },
+    info: {
+      type: Object,
+      default: () => {}
+    },
+    labels: {
+      type: Function,
+      default: () => ''
+    }
+  },
+  emits: ['handleClick'],
+
+  setup(props, { emit }) {
+    const handleClick = () => {
+      emit('handleClick');
+    };
+
+    return { handleClick };
+  }
+});
+</script>

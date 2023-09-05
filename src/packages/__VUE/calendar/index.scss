@@ -1,0 +1,244 @@
+@import '../popup/index.scss';
+@import '../calendaritem/index.scss';
+
+.cub-theme-dark {
+  .cub-calendar {
+    background: $dark-background;
+    color: $dark-color;
+    .cub-calendar__header {
+      background: $dark-background;
+      color: $dark-color;
+    }
+    .cub-calendar__content {
+      .cub-calendar__panel {
+        .cub-calendar__days {
+          .calendar-month-day {
+            &-choose {
+              background-color: $dark-calendar-choose-color;
+              color: $calendar-choose-font-color;
+            }
+          }
+        }
+      }
+    }
+    .cub-calendar__footer {
+      background: $dark-background2;
+      color: $dark-color;
+    }
+  }
+}
+.cub-calendar {
+  position: relative;
+  display: flex;
+  flex: 1;
+  color: #333333;
+  font-size: 16px;
+  background-color: $white;
+  overflow: hidden;
+  height: 100%;
+  flex-direction: column;
+  &.cub-calendar--nopop {
+    .cub-calendar__header {
+      .cub-calendar__header-title {
+        font-size: $calendar-base-font;
+      }
+    }
+  }
+  .popup-box {
+    height: 100%;
+  }
+  .cub-calendar__content {
+    overflow-y: auto;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  // 头部导航
+  .cub-calendar__header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 1px;
+    background-color: $white;
+
+    .cub-calendar__header-title {
+      font-size: $calendar-title-font;
+      font-weight: $calendar-title-font-weight;
+      line-height: 44px;
+    }
+    .cub-calendar__header-slot {
+      min-height: 24px;
+    }
+    .cub-calendar__header-subtitle {
+      padding: 7px 0;
+      line-height: 22px;
+      font-size: $calendar-sub-title-font;
+    }
+
+    .cub-calendar__weekdays {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      height: 36px;
+      border-radius: 0px 0px 12px 12px;
+      box-shadow: 0px 4px 10px 0px rgba($color: #000000, $alpha: 0.06);
+
+      .cub-calendar__weekday {
+        &.weekend {
+          color: $calendar-day67-font-color;
+        }
+      }
+    }
+  }
+
+  // 月份
+  .cub-calendar__content {
+    flex: 1;
+    width: 100%;
+    display: block;
+    .cub-calendar__panel {
+      position: relative;
+      width: 100%;
+      height: auto;
+      display: block;
+      box-sizing: border-box;
+      .cub-calendar__body {
+        display: block;
+      }
+      .cub-calendar__month {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      div:nth-of-type(2) {
+        .cub-calendar__month-title {
+          padding-top: 0;
+        }
+      }
+
+      .calendar-loading-tip {
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        position: absolute;
+        top: -50px;
+        left: 0;
+        right: 0;
+        font-size: $calendar-text-font;
+        color: $text-color;
+      }
+
+      .cub-calendar__month-title {
+        height: 23px;
+        line-height: 23px;
+        margin: 8px 0;
+        font-size: $calendar-month-title-font-size;
+      }
+
+      .cub-calendar__days {
+        overflow: hidden;
+        .cub-calendar__day {
+          float: left;
+          width: 14.28%;
+          height: 64px;
+          font-weight: $calendar-day-font-weight;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          position: relative;
+
+          &.weekend {
+            color: $calendar-day67-font-color;
+          }
+
+          .cub-calendar__day-tips {
+            position: absolute;
+            width: 100%;
+          }
+
+          .cub-calendar__day-tips--curr {
+            position: absolute;
+            bottom: 6px;
+            width: 100%;
+            font-size: 12px;
+            line-height: 14px;
+          }
+          .cub-calendar__day-tip {
+            position: absolute;
+            bottom: 6px;
+            width: 100%;
+            font-size: 12px;
+            line-height: 14px;
+            color: $calendar-primary-color;
+          }
+          .cub-calendar__day-tips--top {
+            top: 6px;
+          }
+          .cub-calendar__day-tips--bottom {
+            bottom: 6px;
+          }
+          &--active {
+            background-color: $calendar-primary-color;
+            color: $white !important;
+            border-radius: $calendar-day-active-border-radius;
+
+            .cub-calendar__day-tips {
+              visibility: hidden;
+            }
+            .cub-calendar__day-tips--curr {
+              visibility: hidden;
+            }
+            .cub-calendar__day-tip {
+              color: $white;
+            }
+          }
+
+          &--disabled {
+            color: $calendar-disable-color !important;
+          }
+
+          &--choose {
+            color: $calendar-choose-font-color;
+            &::after {
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              background-color: $calendar-choose-color;
+              opacity: 0.09;
+              content: '';
+            }
+          }
+
+          .cub-calendar__day-value {
+            padding: 2px 0;
+            font-size: $calendar-day-font;
+          }
+        }
+      }
+    }
+  }
+
+  // 底部导航
+  .cub-calendar__footer {
+    display: flex;
+    height: 62px;
+    width: 100%;
+    background-color: $white;
+
+    .cub-calendar__confirm {
+      height: 44px;
+      width: 100%;
+      margin: 10px 18px;
+      border-radius: 22px;
+      background: $button-primary-background-color;
+      color: $white;
+      text-align: center;
+      line-height: 44px;
+    }
+  }
+}

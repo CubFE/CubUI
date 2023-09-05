@@ -1,0 +1,106 @@
+{
+  "name": "CubUI",
+  "version": "2.0.0",
+  "description": "轻量级移动端 Vue2、Vue3 组件库",
+  "main": "dist/cubui.umd.js",
+  "module": "dist/cubui.es.js",
+  "style": "dist/style.css",
+  "type": "module",
+  "typings": "dist/types/index.d.ts",
+  "web-types": "dist/smartips/web-types.json",
+  "keywords": [
+    "cubfe",
+    "cubui",
+    "vue",
+    "vue3",
+    "webpack",
+    "vue component",
+    "vue3 component",
+    "vite"
+  ],
+  "author": "cubfe",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "package.json",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky install && node scripts/generate-cubui.cjs",
+    "dev": "vite --open --force",
+    "build:site": "vite build",
+    "build": "vite build --config vite.config.build.ts && vite build --config vite.config.build.disperse.ts && pnpm generate:themes && vite build --config vite.config.build.css.ts && vite build --config vite.config.build.locale.ts && vite build --config vite.config.build.resolver.ts && pnpm dts && pnpm attrs && node scripts/generate-unplugin-deps.cjs cubui && node scripts/copy-dist.cjs cubui",
+    "add": "node scripts/createComponentMode.js",
+    "generate:types": "rimraf ./dist/types && node scripts/generate-types.cjs",
+    "generate:themes": "node scripts/generate-themes.cjs",
+    "test": "vitest",
+    "test:ui": "vitest --ui --coverage",
+    "test:c": "vitest --coverage",
+    "lint": "eslint --ext .vue,.ts,.tsx,.js,.jsx src/",
+    "lint:fix": "pnpm lint --fix",
+    "copydocs": "node ./scripts/copymd.cjs",
+    "attrs": "node ./scripts/createAttributes.cjs",
+    "dts": "rimraf ./tsc/type && vue-tsc --declaration --emitDeclarationOnly -p ./tsconfig.declaration.json && pnpm generate:types",
+    "copy:h5": "node ./scripts/copyh5.cjs"
+  },
+  "standard-version": {
+    "scripts": {
+      "postchangelog": "node ./scripts/updateChangelog.js"
+    }
+  },
+  "dependencies": {
+    "@cubfe/icons-vue": "^0.1.5",
+    "sass": "^1.50.0",
+    "vue-router": "^4.2.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^10.0.0",
+    "@commitlint/config-conventional": "^10.0.0",
+    "@napi-rs/canvas": "^0.1.39",
+    "@types/node": "^17.0.16",
+    "@vitejs/plugin-vue": "^4.2.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "@vitest/coverage-v8": "^0.32.2",
+    "@vitest/ui": "^0.32.2",
+    "@vue/test-utils": "^2.4.0",
+    "autoprefixer": "^10.3.4",
+    "codesandbox": "^2.2.3",
+    "eslint": "^8.44.0",
+    "fs-extra": "^9.1.0",
+    "highlight.js": "^11.8.0",
+    "husky": "^6.0.0",
+    "inquirer": "^8.2.0",
+    "lint-staged": "^10.5.0",
+    "lzutf8": "^0.6.3",
+    "markdown-it": "^13.0.1",
+    "markdown-it-container": "^3.0.0",
+    "prettier": "^2.8.8",
+    "rimraf": "^5.0.1",
+    "typescript": "^4.9.3",
+    "unplugin-vue-components": "^0.25.1",
+    "vite": "^4.3.9",
+    "vite-plugin-md": "^0.21.5",
+    "vitest": "^0.32.2",
+    "vue": "^3.3.4",
+    "vue-tsc": "^1.8.4"
+  },
+  "engines": {
+    "node": ">= 16.0.0",
+    "pnpm": ">= 7.0.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,vue,scss,md}": "prettier --write",
+    "src/**/*.{ts,tsx,js,jsx,vue}": "eslint --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cubfe/cubui.git"
+  }
+}

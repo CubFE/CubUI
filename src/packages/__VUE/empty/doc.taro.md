@@ -1,0 +1,118 @@
+# Empty 空状态
+
+### 介绍
+
+空状态时的占位提示
+
+### 安装
+
+```js
+import { createApp } from 'vue';
+import { Empty } from '@cubui/cubui-taro';
+
+const app = createApp();
+app.use(Empty);
+```
+
+### 基础用法
+
+:::demo
+
+```vue
+<template>
+  <cub-empty description="无数据"></cub-empty>
+</template>
+```
+
+:::
+
+### 图片类型
+
+:::demo
+
+```vue
+<template>
+  <cub-tabs v-model="tabValue">
+    <cub-tab-pane title="无内容">
+      <cub-empty image="empty" description="无内容"></cub-empty>
+    </cub-tab-pane>
+    <cub-tab-pane title="加载失败/错误">
+      <cub-empty image="error" description="加载失败/错误"></cub-empty>
+    </cub-tab-pane>
+    <cub-tab-pane title="无网络">
+      <cub-empty image="network" description="无网络"></cub-empty>
+    </cub-tab-pane>
+  </cub-tabs>
+</template>
+<script setup>
+import { ref } from 'vue';
+const tabValue = ref(0);
+</script>
+```
+
+:::
+
+### 自定义图片
+
+:::demo
+
+```vue
+<template>
+  <cub-empty
+    image="https://static-ftcms.jd.com/p/files/61a9e3313985005b3958672e.png"
+    description="描述文字"
+  ></cub-empty>
+</template>
+```
+
+:::
+
+### 底部内容
+
+:::demo
+
+```vue
+<template>
+  <cub-empty image="error" description="加载失败">
+    <div style="margin-top: 10px">
+      <cub-button icon="refresh" type="primary">重试</cub-button>
+    </div>
+  </cub-empty>
+</template>
+```
+
+:::
+
+## Empty
+
+### Props
+
+| 参数        | 说明                                                               | 类型             | 默认值  |
+| ----------- | ------------------------------------------------------------------ | ---------------- | ------- |
+| image       | 图片类型，可选值为 `empty`、`error`、`network`，支持传入图片 `URL` | string           | `empty` |
+| image-size  | 图片大小，单位为 `px`                                              | number \| string | `-`     |
+| description | 图片下方的描述文字                                                 | string           | `-`     |
+
+### Slots
+
+| 名称        | 说明           |
+| ----------- | -------------- |
+| default     | 自定义底部内容 |
+| image       | 自定义图片     |
+| description | 自定义描述文字 |
+
+## 主题定制
+
+### 样式变量
+
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/component/configprovider)。
+
+| 名称                                | 默认值    |
+| ----------------------------------- | --------- |
+| --cub-empty-padding                 | _32px 0_  |
+| --cub-empty-image-size              | _170px_   |
+| --cub-empty-description-margin-top  | _4px_     |
+| --cub-empty-description-color       | _#666666_ |
+| --cub-empty-description-font-size   | _14px_    |
+| --cub-empty-description-line-height | _20px_    |
+| --cub-empty-description-padding     | _0 40px_  |

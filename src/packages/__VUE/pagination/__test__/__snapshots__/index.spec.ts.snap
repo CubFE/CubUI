@@ -1,0 +1,31 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should render page slot correctly 1`] = `
+"<view class=\\"cub-pagination\\">
+  <view class=\\"cub-pagination-prev disabled\\">上一页</view>
+  <view class=\\"cub-pagination-contain\\">
+    <view class=\\"cub-pagination-item active\\">foo我呀</view>
+    <view class=\\"cub-pagination-item\\">foo我呀</view>
+    <view class=\\"cub-pagination-item\\">foo我呀</view>
+    <view class=\\"cub-pagination-item\\">foo我呀</view>
+    <view class=\\"cub-pagination-item\\">foo我呀</view>
+  </view>
+  <!--v-if-->
+  <view class=\\"cub-pagination-next\\">下一页</view>
+</view>"
+`;
+
+exports[`should render prev-text、next-text slot correctly 1`] = `
+"<view class=\\"cub-pagination\\">
+  <view class=\\"cub-pagination-prev disabled\\">Custom PrevText</view>
+  <view class=\\"cub-pagination-contain\\">
+    <view class=\\"cub-pagination-item active\\">1</view>
+    <view class=\\"cub-pagination-item\\">2</view>
+    <view class=\\"cub-pagination-item\\">3</view>
+    <view class=\\"cub-pagination-item\\">4</view>
+    <view class=\\"cub-pagination-item\\">5</view>
+  </view>
+  <!--v-if-->
+  <view class=\\"cub-pagination-next\\">Custom NextText</view>
+</view>"
+`;

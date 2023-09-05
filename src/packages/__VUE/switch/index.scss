@@ -1,0 +1,58 @@
+.cub-switch {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  background-color: $primary-color;
+  border-radius: $switch-border-radius;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  flex: 0 0 auto; // 防止被压缩
+
+  .cub-icon-loading1 {
+    width: 12px;
+    height: 12px;
+    font-size: 12px;
+  }
+
+  &.cub-switch-close {
+    background-color: $switch-close-bg-color;
+  }
+  .cub-switch-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: $white;
+    transition: transform 0.3s;
+    .cub-switch-label {
+      color: $white;
+      font-size: $font-size-1;
+      &.open {
+        transform: translateX(-16px);
+      }
+      &.close {
+        transform: translateX(16px);
+      }
+    }
+  }
+  &.cub-switch-disable {
+    opacity: 0.6;
+  }
+  &.cub-switch-base {
+    min-width: $switch-width;
+    height: $switch-height;
+    line-height: $switch-line-height;
+    overflow: hidden;
+    .cub-switch-button {
+      height: $switch-inside-height;
+      width: $switch-inside-width;
+      transform: $switch-inside-close-transform;
+    }
+    &.cub-switch-open {
+      .cub-switch-button {
+        transform: $switch-inside-open-transform;
+      }
+    }
+  }
+}

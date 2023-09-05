@@ -1,0 +1,233 @@
+.cub-step {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex: 1;
+  text-align: center;
+  font-size: 0;
+  &-head {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  &-line {
+    position: absolute;
+    top: 11px;
+    left: 50%;
+    right: -50%;
+    display: inline-block;
+    height: 1px;
+    background: $steps-base-line-color;
+  }
+  &-icon {
+    position: relative;
+    display: flex;
+    width: $steps-base-icon-width;
+    height: $steps-base-icon-height;
+    line-height: $steps-base-icon-line-height;
+    font-size: $steps-base-icon-font-size;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    &-inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .cub-icon {
+      width: $steps-base-icon-font-size;
+      height: $steps-base-icon-font-size;
+    }
+    &.is-icon {
+      border-radius: 50%;
+      border-width: 1px;
+      border-style: solid;
+    }
+  }
+  &-main {
+    display: inline-block;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+  }
+  &-title {
+    display: block;
+    margin-bottom: $steps-base-title-margin-bottom;
+    font-size: $steps-base-title-font-size;
+    color: $steps-base-title-color;
+  }
+  &-content {
+    display: block;
+    font-size: $steps-base-content-font-size;
+    color: $steps-base-content-color;
+  }
+  &:last-child {
+    .cub-step-line {
+      display: none;
+    }
+  }
+  &.cub-step-finish {
+    .cub-step-head {
+      color: $steps-finish-head-color;
+      border-color: $steps-finish-head-border-color;
+    }
+    .cub-step-icon.is-icon {
+      background-color: $steps-finish-icon-text-color;
+    }
+    .cub-step-line {
+      background: $steps-finish-line-background;
+    }
+    .cub-step-title {
+      color: $steps-finish-title-color;
+    }
+  }
+  &.cub-step-process {
+    .cub-step-head {
+      color: $steps-process-head-color;
+      border-color: $steps-process-head-border-color;
+    }
+    .cub-step-icon.is-icon {
+      background-color: $steps-process-icon-text-color;
+    }
+    .cub-step-title {
+      color: $steps-process-title-color;
+    }
+  }
+  &.cub-step-wait {
+    .cub-step-head {
+      color: $steps-wait-head-color;
+      border-color: $steps-wait-head-border-color;
+    }
+    .cub-step-icon.is-icon {
+      background-color: $steps-wait-icon-bg-color;
+      color: $steps-wait-icon-text-color;
+      .cub-icon {
+        color: $steps-wait-icon-color;
+      }
+    }
+    .cub-step-content {
+      color: $steps-wait-content-color;
+    }
+  }
+}
+.cub-steps-horizontal {
+  &.cub-steps-dot {
+    .cub-step-head {
+      margin-top: 7px;
+      margin-bottom: 0;
+    }
+    .cub-step-line {
+      top: 50%;
+      bottom: -50%;
+    }
+    .cub-step-icon {
+      width: 8px;
+      height: 8px;
+      background: $primary-color;
+      border-radius: 50%;
+      box-sizing: content-box;
+    }
+    .cub-step-wait {
+      .cub-step-icon {
+        background-color: $steps-wait-icon-bg-color;
+      }
+      .cub-step-content {
+        color: $steps-wait-content-color;
+      }
+    }
+    .cub-step-finish {
+      .cub-step-icon {
+        background-color: $primary-color;
+      }
+    }
+    .cub-step-process {
+      .cub-step-icon {
+        position: relative;
+        background-color: $primary-color;
+        &:before {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          margin-left: -7px;
+          margin-top: -7px;
+          width: 14px;
+          height: 14px;
+          background-color: $primary-color-end;
+          border-radius: 50%;
+          opacity: 0.23;
+        }
+      }
+    }
+  }
+}
+.cub-steps-vertical {
+  .cub-step {
+    display: flex;
+    height: 33.34%;
+  }
+  .cub-step-line {
+    position: absolute;
+    display: inline-block;
+    width: 1px;
+    height: 100%;
+    background: #909ca4;
+  }
+  .cub-step-main {
+    display: inline-block;
+    padding-left: 6%;
+    text-align: left;
+  }
+  &.cub-steps-dot {
+    .cub-step-head {
+      margin-top: 7px;
+      margin-bottom: 0;
+    }
+    .cub-step-line {
+      top: 7px;
+      left: 50%;
+      right: -50%;
+    }
+    .cub-step-icon {
+      width: 8px;
+      height: 8px;
+      background: $primary-color;
+      border-radius: 50%;
+      box-sizing: content-box;
+    }
+    .cub-step-wait {
+      .cub-step-icon {
+        background-color: $steps-wait-icon-bg-color;
+      }
+      .cub-step-content {
+        color: $steps-wait-content-color;
+      }
+    }
+    .cub-step-finish {
+      .cub-step-icon {
+        background-color: $primary-color;
+      }
+    }
+    .cub-step-process {
+      .cub-step-icon {
+        position: relative;
+        background-color: $primary-color;
+        &:before {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          margin-left: -7px;
+          margin-top: -7px;
+          width: 14px;
+          height: 14px;
+          background-color: $primary-color-end;
+          border-radius: 50%;
+          opacity: 0.23;
+        }
+      }
+    }
+  }
+}

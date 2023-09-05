@@ -1,0 +1,51 @@
+.cub-theme-dark {
+  .cub-image {
+    .cub-img-loading {
+      background: $dark-background;
+    }
+
+    .cub-img-error {
+      background: $dark-background;
+    }
+  }
+}
+
+.cub-image {
+  display: block;
+  position: relative;
+  .cub-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &.cub-image-round {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .cub-img-loading {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f7f8fa;
+  }
+  .cub-img-error {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f7f8fa;
+  }
+}

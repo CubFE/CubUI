@@ -1,0 +1,152 @@
+<template>
+  <div class="demo">
+    <h2>{{ translate('show') }}</h2>
+    <div class="demo-animate">
+      <cub-animate type="slide-right" :show="show1">
+        <cub-button type="primary" @click="onClick1">{{ translate('once') }}</cub-button>
+      </cub-animate>
+    </div>
+
+    <div class="demo-animate">
+      <cub-animate type="slide-right" :show="show2">
+        <cub-button type="primary" @click="onClick2">{{ translate('times') }}</cub-button>
+      </cub-animate>
+    </div>
+
+    <h2>{{ translate('basic') }}</h2>
+
+    <div class="demo-animate">
+      <cub-animate type="shake" :loop="true">
+        <cub-button type="primary">{{ translate('shake') }}</cub-button>
+      </cub-animate>
+    </div>
+
+    <div class="demo-animate">
+      <cub-animate type="ripple" :loop="true">
+        <cub-button type="primary">{{ translate('ripple') }}</cub-button>
+      </cub-animate>
+    </div>
+
+    <div class="demo-animate">
+      <cub-animate type="breath" :loop="true">
+        <cub-button type="primary">{{ translate('breath') }}</cub-button>
+      </cub-animate>
+    </div>
+
+    <div class="demo-animate">
+      <cub-animate type="twinkle" :loop="true">
+        <cub-button type="primary">{{ translate('twinkle') }}</cub-button>
+      </cub-animate>
+    </div>
+
+    <div class="demo-animate">
+      <cub-animate type="flicker" :loop="true">
+        <cub-button type="primary">{{ translate('flicker') }}</cub-button>
+      </cub-animate>
+    </div>
+
+    <div class="demo-animate">
+      <cub-animate type="jump" :loop="true">
+        <cub-button type="primary">{{ translate('jump') }}</cub-button>
+      </cub-animate>
+    </div>
+
+    <div class="demo-animate">
+      <cub-animate type="float" :loop="true">
+        <cub-button type="primary">{{ translate('float') }}</cub-button>
+      </cub-animate>
+    </div>
+
+    <h2>{{ translate('click') }}</h2>
+
+    <div class="demo-animate">
+      <cub-animate type="slide-right" action="click">
+        <cub-button type="primary">{{ translate('FRTL') }}</cub-button>
+      </cub-animate>
+    </div>
+
+    <div class="demo-animate">
+      <cub-animate type="slide-left" action="click">
+        <cub-button type="primary">{{ translate('FLTR') }}</cub-button>
+      </cub-animate>
+    </div>
+
+    <div class="demo-animate">
+      <cub-animate type="slide-top" action="click">
+        <cub-button type="primary">{{ translate('FTTB') }}</cub-button>
+      </cub-animate>
+    </div>
+
+    <div class="demo-animate">
+      <cub-animate type="slide-bottom" action="click">
+        <cub-button type="primary">{{ translate('FBTT') }}</cub-button>
+      </cub-animate>
+    </div>
+  </div>
+</template>
+<script setup lang="ts">
+import { ref } from 'vue';
+import { createComponent } from '@/packages/utils/create';
+const { translate } = createComponent('animate');
+import { useTranslate } from '@/sites/assets/util/useTranslate';
+
+const initTranslate = () =>
+  useTranslate({
+    'zh-CN': {
+      show: '通过 show 控制动画',
+      once: '单次动画',
+      times: '多次触发',
+      basic: '循环动画',
+      click: '点击触发',
+      FRTL: '由右向左划入',
+      FLTR: '由左向右划入',
+      FTTB: '由上至下划入',
+      FBTT: '由下至上划入',
+      shake: 'shake-抖动',
+      ripple: 'ripple-心跳',
+      breath: 'breath-呼吸灯',
+      twinkle: 'twinkle-水波',
+      flicker: 'flicker-擦亮',
+      jump: 'jump-跳跃',
+      float: 'float-漂浮'
+    },
+    'en-US': {
+      show: 'Trigger animation through show',
+      once: 'Once',
+      times: 'Several times',
+      basic: 'Loop animation',
+      FRTL: 'From right to left',
+      FLTR: 'From left to right',
+      FTTB: 'From top to bottom',
+      FBTT: 'From bottom to top',
+      shake: 'shake',
+      ripple: 'ripple',
+      breath: 'breath',
+      twinkle: 'twinkle',
+      flicker: 'flicker',
+      jump: 'jump',
+      float: 'float'
+    }
+  });
+initTranslate();
+
+const show1 = ref(false);
+const onClick1 = () => {
+  show1.value = true;
+};
+
+const show2 = ref(false);
+const onClick2 = () => {
+  show2.value = true;
+  setTimeout(() => {
+    show2.value = false;
+  }, 500);
+};
+</script>
+<style lang="scss" scoped>
+.demo-animate {
+  margin-bottom: 10px;
+  display: inline-block;
+  width: 100%;
+}
+</style>

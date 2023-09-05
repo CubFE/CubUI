@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`infiniteloading base 1`] = `
+"<div class=\\"box\\" style=\\"height: 300px; overflow: auto;\\">
+  <view class=\\"cub-infinite-loading\\">
+    <view class=\\"cub-infinite__container\\"></view>
+    <view class=\\"cub-infinite__bottom\\">
+      <!--v-if-->
+    </view>
+  </view>
+</div>"
+`;

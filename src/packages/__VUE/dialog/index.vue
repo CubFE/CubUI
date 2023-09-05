@@ -1,0 +1,203 @@
+<template>
+  <cub-popup
+    :teleport="teleport"
+    v-model:visible="showPopup"
+    :close-on-click-overlay="false"
+    :lock-scroll="lockScroll"
+    :pop-class="popClass"
+    :overlay-class="overlayClass"
+    :overlay-style="overlayStyle"
+    :style="popStyle"
+    round
+    @click-overlay="onClickOverlay"
+    @click-close-icon="closed"
+  >
+    <view :class="classes">
+      <view v-if="$slots.header || title" class="cub-dialog__header">
+        <slot v-if="$slots.header" name="header"></slot>
+        <template v-else>{{ title }}</template>
+      </view>
+
+      <view class="cub-dialog__content" :style="contentStyle">
+        <slot v-if="$slots.default" name="default"></slot>
+        <view v-else-if="typeof content === 'string'" v-html="content"></view>
+        <component v-else :is="content" />
+      </view>
+
+      <view class="cub-dialog__footer" :class="{ [footerDirection]: footerDirection }" v-if="!noFooter">
+        <slot v-if="$slots.footer" name="footer"></slot>
+        <template v-else>
+          <cub-button
+            size="small"
+            plain
+            type="primary"
+            class="cub-dialog__footer-cancel"
+            v-if="!noCancelBtn"
+            @click="onCancel"
+          >
+            {{ cancelText || translate('cancel') }}
+          </cub-button>
+          <cub-button v-if="!noOkBtn" size="small" type="primary" class="cub-dialog__footer-ok" @click="onOk">
+            {{ okText || translate('confirm') }}
+          </cub-button>
+        </template>
+      </view>
+    </view>
+  </cub-popup>
+</template>
+<script lang="ts">
+import { onMounted, computed, watch, ref, PropType, CSSProperties } from 'vue';
+import { createComponent } from '@/packages/utils/create';
+const { componentName, create, translate } = createComponent('dialog');
+import { funInterceptor, Interceptor } from '@/packages/utils/util';
+import { popupProps } from '../popup/props';
+import Popup from '../popup/index.vue';
+import Button from '../button/index.vue';
+export type TextAlign = 'left' | 'center' | 'right' | 'top';
+export default create({
+  inheritAttrs: false,
+  components: {
+    [Popup.name]: Popup,
+    [Button.name]: Button
+  },
+  props: {
+    ...popupProps,
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: true
+    },
+    title: {
+      type: String,
+      default: ''
+    },
+    content: {
+      type: [String, Object] as PropType<string>,
+      default: ''
+    },
+    noFooter: {
+      type: Boolean,
+      default: false
+    },
+    noOkBtn: {
+      type: Boolean,
+      default: false
+    },
+    noCancelBtn: {
+      type: Boolean,
+      default: false
+    },
+    cancelText: {
+      type: String,
+      default: ''
+    },
+    okText: {
+      type: String,
+      default: ''
+    },
+    cancelAutoClose: {
+      type: Boolean,
+      default: true
+    },
+    textAlign: {
+      type: String as PropType<TextAlign>,
+      default: 'center'
+    },
+    closeOnPopstate: {
+      type: Boolean,
+      default: false
+    },
+    footerDirection: {
+      type: String,
+      default: 'horizontal' //vertical
+    },
+    customClass: {
+      type: String,
+      default: ''
+    },
+    popStyle: {
+      type: Object as PropType<CSSProperties>
+    },
+    beforeClose: Function as PropType<Interceptor>
+  },
+  emits: ['update', 'update:visible', 'ok', 'cancel', 'opened', 'closed'],
+  setup(props, { emit }) {
+    const showPopup = ref(props.visible);
+    onMounted(() => {
+      if (props.closeOnPopstate) {
+        window.addEventListener('popstate', function () {
+          closed('page');
+        });
+      }
+    });
+
+    watch(
+      () => props.visible,
+      (value) => {
+        showPopup.value = value;
+        if (value) {
+          emit('opened');
+        }
+      }
+    );
+
+    const classes = computed(() => {
+      return {
+        [componentName]: true,
+        [props.customClass]: true
+      };
+    });
+
+    const update = (val: boolean) => {
+      emit('update', val);
+      emit('update:visible', val);
+    };
+
+    const closed = (action: string) => {
+      funInterceptor(props.beforeClose, {
+        args: [action],
+        done: () => {
+          showPopup.value = false;
+          update(false);
+          emit('closed');
+        }
+      });
+    };
+
+    const onCancel = () => {
+      emit('cancel');
+      if (props.cancelAutoClose) {
+        showPopup.value = false;
+        closed('cancel');
+      }
+    };
+
+    const onOk = () => {
+      emit('ok');
+      closed('ok');
+    };
+
+    const onClickOverlay = () => {
+      if (props.closeOnClickOverlay) {
+        closed('');
+      }
+    };
+
+    const contentStyle = computed(() => {
+      return {
+        textAlign: props.textAlign
+      } as CSSProperties;
+    });
+
+    return {
+      closed,
+      classes,
+      onCancel,
+      onOk,
+      showPopup,
+      onClickOverlay,
+      contentStyle,
+      translate
+    };
+  }
+});
+</script>

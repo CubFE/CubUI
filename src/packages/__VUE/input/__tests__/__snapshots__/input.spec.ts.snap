@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should render word limit correctly 1`] = `
+"<view class=\\"cub-input-box\\"><input style=\\"text-align: left;\\" type=\\"text\\" class=\\"input-text\\" maxlength=\\"\\" placeholder=\\"\\" formattrigger=\\"onChange\\" enterkeyhint=\\"done\\">
+  <!--v-if-->
+</view>"
+`;
+
+exports[`should render word limit correctly when modelValue is null 1`] = `
+"<view class=\\"cub-input cub-input--border\\" maxlength=\\"3\\">
+  <view class=\\"cub-input-value\\">
+    <view class=\\"cub-input-inner\\">
+      <!--v-if-->
+      <view class=\\"cub-input-box\\"><input style=\\"text-align: left;\\" type=\\"text\\" class=\\"input-text\\" maxlength=\\"\\" placeholder=\\"\\" formattrigger=\\"onChange\\" enterkeyhint=\\"done\\">
+        <!--v-if-->
+      </view>
+      <!--v-if-->
+      <view class=\\"cub-input-right-box\\"></view>
+    </view>
+  </view>
+</view>"
+`;

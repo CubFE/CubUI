@@ -1,0 +1,17 @@
+.cub-ellipsis {
+  display: flex;
+  .cub-ellipsis__text {
+    cursor: hand;
+    color: $ellipsis-expand-collapse-color;
+    display: inline;
+  }
+
+  .cub-ellipsis__wordbreak {
+    word-break: break-all;
+  }
+}
+
+.cub-ellipsis__copy {
+  position: absolute;
+  top: -999999px;
+}

@@ -1,0 +1,24 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./tsc/type",
+    "emitDeclarationOnly": true
+  },
+  "include": [
+    "src/**/*.d.ts",
+    "src/packages/__VUE/**/index.vue",
+    "src/packages/__VUE/**/*.ts",
+    "src/packages/cubui.vue.build.ts",
+    "src/packages/locale",
+    "src/packages/utils",
+    "src/packages/resolver"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/test/**/*",
+    "**/demo/**/*",
+    "src/packages/__VUE/**/__tests__/",
+    "src/packages/__VUE/**/__test__/"
+  ]
+}

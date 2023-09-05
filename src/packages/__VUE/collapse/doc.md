@@ -1,0 +1,236 @@
+# Collapse 折叠面板
+
+### 介绍
+
+将内容放置在多个折叠面板中，点击面板标题可展开或收缩内容。
+
+### 安装
+
+```javascript
+import { createApp } from 'vue';
+import { Collapse, CollapseItem } from '@cubui/cubui';
+
+const app = createApp();
+app.use(Collapse);
+app.use(CollapseItem);
+```
+
+### 基础用法
+
+通过`v-model`控制展开的面板列表，`activeNames`为数组格式
+:::demo
+
+```html
+<template>
+  <cub-collapse v-model="activeNames" @change="onChange">
+    <cub-collapse-item :name="1">
+      <template v-slot:title> {{title1}} </template>
+      cubui是一套拥有轻量级的 Vue 组件库
+    </cub-collapse-item>
+    <cub-collapse-item :title="title2" :name="2">
+      在产品的功能、体验、易用性和灵活性等各个方面做了全面的升级！
+    </cub-collapse-item>
+    <cub-collapse-item :title="title3" :name="3" disabled> </cub-collapse-item>
+  </cub-collapse>
+</template>
+<script>
+  import { reactive, ref, toRefs } from 'vue';
+  export default {
+    setup() {
+      const activeNames = ref([1, 2]);
+      const title = reactive({
+        title1: '标题1',
+        title2: '标题2',
+        title3: '标题3'
+      });
+      const onChange = (modelValue, currName, status) => {
+        // currName: 当前操作的 collapse-item 的 name
+        // status: true 打开 false 关闭
+        console.log(modelValue, currName, status);
+      };
+      return {
+        onChange,
+        activeNames,
+        ...toRefs(title)
+      };
+    }
+  };
+</script>
+```
+
+:::
+
+### 手风琴
+
+通过`accordion`可以设置为手风琴模式，最多展开一个面板，此时`activeName`为字符串格式；`value`可以设置右侧的内容
+
+:::demo
+
+```html
+<template>
+  <cub-collapse v-model="activeName" :accordion="true">
+    <cub-collapse-item :title="title1" :name="1" :value="subTitle"> 基于京东设计语言体系，构建场景 </cub-collapse-item>
+    <cub-collapse-item :title="title2" :name="2"> 提高界⾯的模块化通用程度 </cub-collapse-item>
+    <cub-collapse-item :title="title3" :name="3">
+      采用组合式 API Composition 语法重构，结构清晰，功能模块化
+    </cub-collapse-item>
+  </cub-collapse>
+</template>
+<script>
+  import { reactive, ref, toRefs } from 'vue';
+  export default {
+    setup() {
+      const activeName = ref(1);
+      const subTitle = '副标题';
+      const title = reactive({
+        title1: '标题1',
+        title2: '标题2',
+        title3: '标题3'
+      });
+      return {
+        activeName,
+        subTitle,
+        ...toRefs(title)
+      };
+    }
+  };
+</script>
+```
+
+:::
+
+### 自定义折叠图标
+
+通过 icon 设置自定义图标
+
+:::demo
+
+```html
+<template>
+  <cub-collapse v-model="activeName" :accordion="true">
+    <cub-collapse-item :title="title1" :name="1" :icon="Notice">
+      <template v-slot:value> 文本测试 </template>
+      cubui3.0重新思考其内在的一致性和可组合性
+    </cub-collapse-item>
+    <cub-collapse-item :title="title2" :name="2" :icon="Follow">
+      提⾼产研输出对接的效率，降低输出工作量
+    </cub-collapse-item>
+  </cub-collapse>
+</template>
+<script>
+  import { reactive, ref, toRefs } from 'vue';
+  import { Notice, Follow } from '@cubfe/icons-vue';
+  export default {
+    setup() {
+      const activeName = ref(1);
+      const title = reactive({
+        title1: '标题1',
+        title2: '标题2'
+      });
+      return {
+        activeName,
+        ...toRefs(title),
+        Notice,
+        Follow
+      };
+    }
+  };
+</script>
+```
+
+:::
+
+### 设置固定内容（不折叠）
+
+通过 slot:extra 设置内容
+:::demo
+
+```html
+<template>
+  <cub-collapse v-model="activeName" :accordion="true">
+    <cub-collapse-item :title="title1" :name="1">
+      <template v-slot:extra>固定内容</template>
+      cubui是一套拥有轻量级的 Vue 组件库
+    </cub-collapse-item>
+    <cub-collapse-item :title="title2" :name="2">
+      在产品的功能、体验、易用性和灵活性等各个方面做了全面的升级！
+    </cub-collapse-item>
+  </cub-collapse>
+</template>
+<script>
+  import { reactive, ref, toRefs } from 'vue';
+  export default {
+    setup() {
+      const activeName = ref(1);
+      const title = reactive({
+        title1: '标题1',
+        title2: '标题2'
+      });
+      return {
+        activeName,
+        ...toRefs(title)
+      };
+    }
+  };
+</script>
+```
+
+:::
+
+## API
+
+### Collapse Props
+
+| 参数      | 说明                  | 类型                                                               | 默认值  |
+| --------- | --------------------- | ------------------------------------------------------------------ | ------- |
+| v-model   | 当前展开面板的 `name` | 手风琴模式：string \| number<br>非手风琴模式：(string \| number)[] | `-`     |
+| accordion | 是否开启手风琴模式    | boolean                                                            | `false` |
+
+### CollapseItem Props
+
+| 参数     | 说明                                                     | 类型             | 默认值  |
+| -------- | -------------------------------------------------------- | ---------------- | ------- |
+| name     | 唯一标识符，必填                                         | string \| number | `-1`    |
+| title    | 标题栏左侧内容，支持插槽传入（`props` 传入的优先级更高） | string           | `-`     |
+| value    | 标题栏右侧内容，支持插槽传入（`props` 传入的优先级更高） | string           | `-`     |
+| icon     | 标题栏左侧图标组件，等同于 `cubui-icon` 组件             | -                | `-`     |
+| label    | 标题栏描述信息                                           | number \| string | `-`     |
+| rotate   | 点击折叠和展开的旋转角度,在自定义图标模式下生效          | string \| number | `180`   |
+| disabled | 标题栏是否禁用                                           | boolean          | `false` |
+| border   | 是否显示边框                                             | boolean          | `true`  |
+
+### CollapseItem Slots
+
+| 名称  | 说明                         |
+| ----- | ---------------------------- |
+| title | 标题栏左侧内容插槽           |
+| value | 标题栏右侧内容插槽           |
+| extra | 设置标题下固定内容（不折叠） |
+
+### Events
+
+| 事件名 | 说明           | 回调参数                         |
+| ------ | -------------- | -------------------------------- |
+| change | 切换面板时触发 | `(modelValue, currName, status)` |
+
+## 主题定制
+
+### 样式变量
+
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/component/configprovider)。
+
+| 名称                                            | 默认值                   |
+| ----------------------------------------------- | ------------------------ |
+| --cub-collapse-item-padding                     | _13px 36px 13px 26px_    |
+| --cub-collapse-item-color                       | _#666666_                |
+| --cub-collapse-item-disabled-color              | _#c8c9cc_                |
+| --cub-collapse-item-icon-color                  | _#666666_                |
+| --cub-collapse-item-font-size                   | _var(--cub-font-size-2)_ |
+| --cub-collapse-item-line-height                 | _24px_                   |
+| --cub-collapse-item-sub-title-color             | _#666666_                |
+| --cub-collapse-wrapper-content-padding          | _12px 26px_              |
+| --cub-collapse-wrapper-empty-content-padding    | _0 26px_                 |
+| --cub-collapse-wrapper-content-color            | _#666666_                |
+| --cub-collapse-wrapper-content-font-size        | _var(--cub-font-size-2)_ |
+| --cub-collapse-wrapper-content-line-height      | _1.5_                    |
+| --cub-collapse-wrapper-content-background-color | _var(--cub-white)_       |

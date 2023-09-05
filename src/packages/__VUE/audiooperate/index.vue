@@ -1,0 +1,59 @@
+<template>
+  <!--配合进度条使用 播放时长、 兼容是否支持 、暂停、 开启-->
+  <div class="cub-audio-operate">
+    <div class="cub-audio-operate-item" @click="fastBack" v-if="type == 'back'"
+      ><cub-button type="primary" size="small" v-if="!customSlot">{{ translate('back') }}</cub-button
+      ><slot></slot
+    ></div>
+    <div class="cub-audio-operate-item" @click="changeStatus" v-if="type == 'play'"
+      ><cub-button type="primary" size="small" v-if="!customSlot">{{
+        !audioData.playing ? `${translate('start')}` : `${translate('pause')}`
+      }}</cub-button>
+      <slot></slot
+    ></div>
+    <div class="cub-audio-operate-item" @click="forward" v-if="type == 'forward'"
+      ><cub-button type="primary" size="small" v-if="!customSlot">快进</cub-button><slot></slot
+    ></div>
+    <div class="cub-audio-operate-item" @click="handleMute" v-if="type == 'mute'"
+      ><cub-button :type="!audioData.hanMuted ? 'primary' : 'default'" size="small" v-if="!customSlot">{{
+        translate('mute')
+      }}</cub-button
+      ><slot></slot
+    ></div>
+  </div>
+</template>
+<script lang="ts">
+import { toRefs, ref, useSlots, reactive, inject } from 'vue';
+import { createComponent } from '@/packages/utils/create';
+import Button from '../button/index.vue';
+const { create, translate } = createComponent('audio-operate');
+
+export default create({
+  props: {
+    // 展示的形式   back 倒退   play 开始 or 暂停  forward 快进 mute 静音
+    type: {
+      type: String,
+      default: () => 'play'
+    }
+  },
+  components: {
+    [Button.name]: Button
+  },
+  emits: ['click'],
+
+  setup(props) {
+    const audio: any = inject('audioParent');
+    const parent: {
+      children: [];
+      audioData: any;
+      handleMute: (payload: MouseEvent) => void;
+      forward: (payload: MouseEvent) => void;
+      fastBack: (payload: MouseEvent) => void;
+      changeStatus: (payload: MouseEvent) => void;
+    } = reactive(audio);
+    const customSlot = ref(useSlots().default);
+
+    return { ...toRefs(props), ...toRefs(parent), customSlot, translate };
+  }
+});
+</script>

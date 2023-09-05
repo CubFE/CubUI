@@ -1,0 +1,114 @@
+# Textarea
+
+### Intro
+
+Enter or edit text in the text box, and limit the number of entries is supported.
+
+### 安装
+
+```js
+import { createApp } from 'vue';
+import { Textarea } from '@cubui/cubui';
+
+const app = createApp();
+app.use(Textarea);
+```
+
+### Basic usage
+
+:::demo
+
+```vue
+<template>
+  <cub-textarea v-model="value" />
+</template>
+<script setup>
+import { ref } from 'vue';
+const value = ref('');
+</script>
+```
+
+:::
+
+### Display word count
+
+:::demo
+
+```vue
+<template>
+  <cub-textarea v-model="value" limit-show max-length="20" />
+</template>
+<script setup>
+import { ref } from 'vue';
+const value = ref('');
+</script>
+```
+
+:::
+
+### Height customization, stretching
+
+:::demo
+
+```vue
+<template>
+  <cub-textarea v-model="value" :rows="1" autosize />
+</template>
+<script setup>
+import { ref } from 'vue';
+const value = ref('');
+</script>
+```
+
+:::
+
+### read-only，disabled
+
+:::demo
+
+```vue
+<template>
+  <cub-textarea readonly model-value="Textarea read only status" />
+  <cub-textarea disabled model-value="Textarea disabled" />
+</template>
+```
+
+:::
+
+## API
+
+### Props
+
+| Attribute   | Description                                                                                                                 | Type                                              | Default         |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- | --------------- |
+| v-model     | input value, support two-way binding                                                                                        | string                                            | -               |
+| placeholder | set placeholder prompt text                                                                                                 | string                                            | `'Placeholder'` |
+| max-length  | limit the maximum input characters                                                                                          | string, number                                    | -               |
+| rows        | height of textarea, with priority higher than autosize attribute `Only H5 is supported`                                     | string and number                                 | `2`             |
+| limit-show  | whether textarea displays the input characters. Use                                                                         | Boolean                                           | ` false`        |
+| autosize    | whether to adapt the content height. You can also pass in objects, such as {maxheight: 200, minheight: 100}. The unit is PX | Boolean, {maxheight?: number; minheight?: number} | `false`         |
+| text-align  | text position, optional values `left ,  center,  right`                                                                     | string                                            | -               |
+| readonly    | read only attribute                                                                                                         | Boolean                                           | `false`         |
+| disabled    | disable attribute                                                                                                           | Boolean                                           | `false`         |
+| autofocus   | get focus automatically                                                                                                     | Boolean                                           | `false`         |
+
+### Events
+
+| Event  | Description                                       | Arguments     |
+| ------ | ------------------------------------------------- | ------------- |
+| change | Triggered when the value of the input box changes | `value`       |
+| focus  | Triggered when focusing                           | `event`       |
+| blur   | Triggered when out of focus                       | `value,event` |
+
+## Theming
+
+### CSS Variables
+
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/component/configprovider).
+
+| Name                          | Default Value              |
+| ----------------------------- | -------------------------- |
+| --cub-textarea-font           | _var(--cub-font-size-2)_   |
+| --cub-textarea-limit-color    | _var(--cub-text-color)_    |
+| --cub-textarea-text-color     | _var(--cub-title-color)_   |
+| --cub-textarea-disabled-color | _var(--cub-disable-color)_ |

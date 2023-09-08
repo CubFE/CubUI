@@ -1,0 +1,209 @@
+# SideNavbar
+
+### Intro
+
+For content selection and switching
+
+### Install
+
+```javascript
+import { createApp } from 'vue';
+import { SideNavbar, SubSideNavbar, SideNavbarItem } from '@cubui/cubui';
+
+const app = createApp();
+app.use(SideNavbar);
+app.use(SubSideNavbar);
+app.use(SideNavbarItem);
+```
+
+### Basic Usage
+
+The left and right display can be controlled by setting `'position'`
+
+:::demo
+
+```html
+<template>
+  <cub-cell @click="handleClick1">
+    <span><label>right</label></span>
+  </cub-cell>
+  <cub-popup position="right" v-model:visible="show1" :style="{ width, height }">
+    <cub-side-navbar>
+      <cub-sub-side-navbar title="Intelligent City Ai" ikey="6">
+        <cub-sub-side-navbar title="Human body recognition 1" ikey="9">
+          <cub-side-navbar-item ikey="10" title="Human testing 1"></cub-side-navbar-item>
+          <cub-side-navbar-item ikey="11" title="Fine grained portrait segment 1"></cub-side-navbar-item>
+        </cub-sub-side-navbar>
+        <cub-sub-side-navbar title="Human body recognition 2" ikey="12">
+          <cub-side-navbar-item ikey="13" title="Human testing 2"></cub-side-navbar-item>
+          <cub-side-navbar-item ikey="14" title="Fine grained portrait segment 2"></cub-side-navbar-item>
+        </cub-sub-side-navbar>
+      </cub-sub-side-navbar>
+    </cub-side-navbar>
+  </cub-popup>
+</template>
+<script lang="ts">
+  import { reactive, toRefs } from 'vue';
+  export default {
+    setup() {
+      const state = reactive({
+        show1: false,
+        width: '80%',
+        height: '100%'
+      });
+
+      const handleClick1 = () => {
+        state.show1 = true;
+      };
+
+      return {
+        ...toRefs(state),
+        handleClick1
+      };
+    }
+  };
+</script>
+```
+
+:::
+
+### Nesting (up to three layers recommended)
+
+:::demo
+
+```html
+<template>
+  <cub-cell @click="handleClick3">
+    <span><label>show</label></span>
+  </cub-cell>
+  <cub-popup position="right" v-model:visible="show3" :style="{ width, height }">
+    <cub-side-navbar :show="show3">
+      <cub-side-navbar-item
+        ikey="1"
+        title="Face recognition"
+        @click="handleClick4('Face recognition')"
+      ></cub-side-navbar-item>
+      <cub-side-navbar-item ikey="2" title="natural language processing"></cub-side-navbar-item>
+      <cub-sub-side-navbar title="image understanding" ikey="3" :open="false">
+        <cub-side-navbar-item ikey="4" title="Dish identification"></cub-side-navbar-item>
+        <cub-side-navbar-item ikey="5" title="Photo shopping"></cub-side-navbar-item>
+      </cub-sub-side-navbar>
+      <cub-sub-side-navbar title="Intelligent City Ai" ikey="6">
+        <cub-side-navbar-item ikey="7" title="Enterprise risk early warning model"></cub-side-navbar-item>
+        <cub-side-navbar-item ikey="8" title="Water quality inspection"></cub-side-navbar-item>
+        <cub-sub-side-navbar title="Human body recognition" ikey="9">
+          <cub-side-navbar-item ikey="10" title="Human testing"></cub-side-navbar-item>
+          <cub-side-navbar-item ikey="11" title="Fine grained portrait segment"></cub-side-navbar-item>
+        </cub-sub-side-navbar>
+      </cub-sub-side-navbar>
+      <cub-sub-side-navbar title="natural language processing" ikey="12">
+        <cub-side-navbar-item ikey="13" title="lexical analysis"></cub-side-navbar-item>
+        <cub-side-navbar-item ikey="14" title="Syntactic analysis"></cub-side-navbar-item>
+      </cub-sub-side-navbar>
+      <cub-sub-side-navbar v-for="item in navs" :key="item.id" :title="item.name" :ikey="item.id">
+        <cub-side-navbar-item v-for="citem in item.arr" :key="citem.id" :title="citem.name"></cub-side-navbar-item>
+      </cub-sub-side-navbar>
+    </cub-side-navbar>
+  </cub-popup>
+</template>
+<script lang="ts">
+  import { reactive, toRefs } from 'vue';
+  export default {
+    setup() {
+      const state = reactive({
+        show3: false,
+        width: '80%',
+        height: '100%',
+        navs: [] as any[]
+      });
+
+      const handleClick3 = () => {
+        state.show3 = true;
+        setTimeout(() => {
+          state.navs = [
+            {
+              id: 16,
+              name: 'async1',
+              arr: [{ pid: 16, id: 17, name: 'async-id17' }]
+            },
+            {
+              id: 17,
+              name: 'async2',
+              arr: [{ pid: 17, id: 18, name: 'async-id18' }]
+            }
+          ];
+        }, 2000);
+      };
+
+      const handleClick4 = (msg: string) => {};
+
+      return {
+        ...toRefs(state),
+        handleClick3,
+        handleClick4
+      };
+    }
+  };
+</script>
+```
+
+:::
+
+## API
+
+### SideNavbar Props
+
+| Attribute | Description             | Type             | Default |
+| --------- | ----------------------- | ---------------- | ------- |
+| offset    | Navigation indent width | number \| string | `15`    |
+
+### SubSideNavbar Props
+
+| Attribute | Description                               | Type             | Default |
+| --------- | ----------------------------------------- | ---------------- | ------- |
+| title     | Navigation title                          | string           | ``      |
+| ikey      | Navigation unique identifier              | number \| string | ``      |
+| open      | Whether navigation is expanded by default | boolean          | `true`  |
+
+### SideNavbarItem Props
+
+| Attribute | Description                  | Type             | Default |
+| --------- | ---------------------------- | ---------------- | ------- |
+| title     | Navigation title             | string           | `15`    |
+| ikey      | Navigation unique identifier | number \| string | ``      |
+
+### SubSideNavbar Events
+
+| Event       | Description      | Arguments |
+| ----------- | ---------------- | --------- |
+| title-click | Navigation Click | -         |
+
+### SideNavbarItem Events
+
+| Event | Description      | Arguments |
+| ----- | ---------------- | --------- |
+| click | Navigation Click | -         |
+
+## Theming
+
+### CSS Variables
+
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/component/configprovider).
+
+| Name                                        | Default Value                |
+| ------------------------------------------- | ---------------------------- |
+| --cub-sidenavbar-content-bg-color           | _var(--cub-white)_           |
+| --cub-sidenavbar-sub-title-border-color     | _#f6f6f6_                    |
+| --cub-sidenavbar-sub-title-bg-color         | _#f6f6f6_                    |
+| --cub-sidenavbar-sub-title-font-size        | _var(--cub-font-size-large)_ |
+| --cub-sidenavbar-sub-title-radius           | _0_                          |
+| --cub-sidenavbar-sub-title-border           | _0_                          |
+| --cub-sidenavbar-sub-title-width            | _100%_                       |
+| --cub-sidenavbar-sub-title-height           | _40px_                       |
+| --cub-sidenavbar-sub-title-text-line-height | _40px_                       |
+| --cub-sidenavbar-sub-title-text-color       | _var(--cub-title-color)_     |
+| --cub-sidenavbar-item-title-color           | _#333_                       |
+| --cub-sidenavbar-item-title-bg-color        | _var(--cub-white)_           |
+| --cub-sidenavbar-item-height                | _40px_                       |
+| --cub-sidenavbar-item-line-height           | _40px_                       |
+| --cub-sidenavbar-item-font-size             | _16px_                       |

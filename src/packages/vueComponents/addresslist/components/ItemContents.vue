@@ -1,0 +1,64 @@
+<template>
+  <div class="cub-address-list-item" @click="contentsClick">
+    <div class="cub-address-list-item__info">
+      <div class="cub-address-list-item__info-contact">
+        <slot name="content-top">
+          <div class="cub-address-list-item__info-contact-name">{{ item.addressName }}</div>
+          <div class="cub-address-list-item__info-contact-tel">{{ item.phone }}</div>
+          <div class="cub-address-list-item__info-contact-default" v-if="item.defaultAddress">{{
+            translate('default')
+          }}</div>
+        </slot>
+      </div>
+      <div class="cub-address-list-item__info-handle">
+        <slot name="content-icon">
+          <Trash name="del" class="cub-address-list-item__info-handle-del" @click="delClick"></Trash>
+          <Edit name="edit" class="cub-address-list-item__info-handle-edit" @click="editClick"></Edit>
+        </slot>
+      </div>
+    </div>
+    <div class="cub-address-list-item__addr">
+      <slot name="content-addr">
+        {{ item.fullAddress }}
+      </slot>
+    </div>
+  </div>
+</template>
+<script lang="ts">
+import { createComponent } from '@/packages/utils/create';
+const { create } = createComponent('address-list-item');
+const { translate } = createComponent('address-list');
+import { Trash, Edit } from '@cubfe/icons-vue';
+export default create({
+  components: { Trash, Edit },
+  props: {
+    item: {
+      type: Object,
+      default: {}
+    }
+  },
+  emits: ['delIcon', 'editIcon', 'clickItem'],
+
+  setup(props, { emit }) {
+    const delClick = (event: Event) => {
+      emit('delIcon', event, props.item);
+      event.stopPropagation();
+    };
+    const editClick = (event: Event) => {
+      emit('editIcon', event, props.item);
+      event.stopPropagation();
+    };
+    const contentsClick = (event: Event) => {
+      emit('clickItem', event, props.item);
+      event.stopPropagation();
+    };
+
+    return {
+      delClick,
+      editClick,
+      contentsClick,
+      translate
+    };
+  }
+});
+</script>

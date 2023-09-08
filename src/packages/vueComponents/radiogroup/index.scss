@@ -1,0 +1,22 @@
+.cub-radio-group {
+  display: inline-block;
+  .cub-radio {
+    margin-bottom: 5px;
+  }
+  &--vertical {
+  }
+  &--horizontal {
+    .cub-radio {
+      display: inline-flex;
+      margin-right: 10px;
+      &--round {
+        .cub-radio__label {
+          margin: 0 6px;
+        }
+      }
+      &--button {
+        // ...
+      }
+    }
+  }
+}

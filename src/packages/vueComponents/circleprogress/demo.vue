@@ -1,0 +1,106 @@
+<template>
+  <div class="demo full">
+    <h2>{{ translate('basic') }}</h2>
+    <div class="demo__piece">
+      <cub-circle-progress progress="20" />
+    </div>
+    <h2>{{ translate('customWidth') }}</h2>
+    <div class="demo__piece">
+      <cub-circle-progress progress="50" strokeWidth="10" />
+    </div>
+
+    <h2>{{ translate('Gradient') }}</h2>
+    <div class="demo__piece">
+      <cub-circle-progress progress="50" color="red" />
+      <cub-circle-progress progress="100" :color="gradientColor" />
+    </div>
+    <h2>{{ translate('customSize') }}</h2>
+    <div class="demo__piece">
+      <cub-circle-progress progress="50" radius="60" />
+    </div>
+    <h2>{{ translate('customContent') }}</h2>
+    <div class="demo__piece">
+      <cub-circle-progress progress="50" radius="60">{{ translate('custom') }}</cub-circle-progress>
+    </div>
+    <h2>{{ translate('dynamicChange') }}</h2>
+    <div class="demo__piece">
+      <cub-circle-progress :progress="percent" />
+    </div>
+    <div class="demo__btn">
+      <cub-button type="primary" @click="reduce">{{ translate('reduce') }}</cub-button>
+      <cub-button type="primary" @click="add">{{ translate('add') }}</cub-button>
+    </div>
+  </div>
+</template>
+<script setup lang="ts">
+import { ref } from 'vue';
+import { createComponent } from '@/packages/utils/create';
+const { translate } = createComponent('circle-progress');
+import { useTranslate } from '@/sites/assets/util/useTranslate';
+const initTranslate = () =>
+  useTranslate({
+    'zh-CN': {
+      basic: '基础用法',
+      customWidth: '自定义宽度',
+      Gradient: '渐变色',
+      customSize: '自定义尺寸',
+      customContent: '自定义内容',
+      custom: '自定义',
+      dynamicChange: '动态改变',
+      reduce: '减少',
+      add: '增加'
+    },
+    'en-US': {
+      basic: 'Basic Usage',
+      customWidth: 'Custom Width',
+      Gradient: 'Gradient',
+      custom: 'custom',
+      customContent: 'Custom Content',
+      dynamicChange: 'Dynamic Change',
+      reduce: 'reduce',
+      add: 'add'
+    }
+  });
+initTranslate();
+const gradientColor = {
+  '0%': '#FF5E5E',
+  '100%': '#FFA062'
+};
+const percent = ref(30);
+const add = () => {
+  percent.value = Math.min(100, percent.value + 10);
+};
+const reduce = () => {
+  percent.value = Math.max(0, percent.value - 10);
+};
+</script>
+
+<style lang="scss" scoped>
+.demo__btn {
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  border-top: 1px solid rgba(234, 240, 251, 1);
+  padding-top: 6px;
+  background: rgba(255, 255, 255, 1);
+
+  .cub-button {
+    margin-right: 10px;
+  }
+}
+
+.demo__piece {
+  display: flex;
+  justify-content: center;
+  background: rgba(255, 255, 255, 1);
+  padding: 10px 0;
+}
+
+.cub-theme-dark {
+  .demo__piece,
+  .demo__btn {
+    background: black;
+    border-top: none;
+  }
+}
+</style>

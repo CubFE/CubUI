@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Divider: default slot 1`] = `"<view class=\\"cub-divider cub-divider-center cub-divider-hairline\\">custom text</view>"`;

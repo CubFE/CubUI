@@ -1,0 +1,30 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`video base info 1`] = `
+"<div class=\\"cub-video\\"><video class=\\"cub-video-player\\" autoplay=\\"\\" loop=\\"\\" controls=\\"\\" playsinline=\\"true\\" webkit-playsinline=\\"true\\" x5-video-player-type=\\"h5-page\\" x5-video-player-fullscreen=\\"false\\">
+    <source src=\\"xxx.mp4\\" type=\\"video/mp4\\">
+  </video>
+  <!--v-if-->
+  <!--v-if-->
+  <div class=\\"cub-video-controller cub-video-controller--show\\" style=\\"display: none;\\">
+    <div class=\\"cub-video-controller__playbtn\\"></div>
+    <div class=\\"cub-video-controller__now\\">00:00</div>
+    <div class=\\"cub-video-controller__progress\\">
+      <div class=\\"cub-video-controller__progress-value\\">
+        <div class=\\"buffered\\" style=\\"width: 0%;\\"></div>
+        <div class=\\"cub-video-controller__ball\\" style=\\"transform: translate3d(0px, -50%, 0);\\">
+          <div class=\\"cub-video-controller__ball-move\\"></div>
+        </div>
+        <div class=\\"cub-video-controller__played\\"></div>
+      </div>
+    </div>
+    <div class=\\"cub-video-controller__total\\">00:00</div>
+    <div class=\\"cub-video-controller__volume muted\\"></div>
+    <div class=\\"cub-video-controller__full\\"></div>
+  </div><!-- 错误弹窗 -->
+  <div class=\\"cub-video-error\\" style=\\"display: none;\\">
+    <p class=\\"cub-video-error-tip\\">视频加载失败</p>
+    <p class=\\"cub-video-error-retry\\">点击重试</p>
+  </div>
+</div>"
+`;

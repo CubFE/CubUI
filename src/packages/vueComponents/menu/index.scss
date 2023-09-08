@@ -1,0 +1,71 @@
+.cub-theme-dark {
+  .cub-menu {
+    .cub-menu__bar {
+      background-color: $dark-background;
+
+      .cub-menu__item {
+        color: $dark-color;
+      }
+    }
+  }
+}
+
+.cub-menu {
+  &.scroll-fixed {
+    position: fixed;
+    top: $menu-scroll-fixed-top;
+    z-index: $menu-scroll-fixed-z-index;
+    width: 100%;
+  }
+
+  .cub-menu__bar {
+    position: relative;
+    display: flex;
+    line-height: $menu-bar-line-height;
+    background-color: $white;
+    box-shadow: $menu-bar-box-shadow;
+
+    &.opened {
+      z-index: $menu-bar-opened-z-index;
+    }
+
+    .cub-menu__item {
+      flex: 1;
+      text-align: center;
+      font-size: $menu-item-font-size;
+      color: $menu-item-text-color;
+      min-width: 0;
+
+      &.active {
+        color: $menu-item-active-text-color;
+      }
+
+      &.disabled {
+        color: $menu-item-disabled-color;
+      }
+
+      .cub-menu__title-icon {
+        transition: all 0.2s linear;
+        display: flex;
+      }
+
+      .cub-menu__title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+
+        .cub-menu__title-text {
+          @include text-ellipsis;
+          display: block;
+          padding-left: $menu-title-text-padding-left;
+          padding-right: $menu-title-text-padding-right;
+        }
+
+        &.active .cub-menu__title-icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}

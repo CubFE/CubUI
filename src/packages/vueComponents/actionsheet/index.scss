@@ -1,0 +1,76 @@
+@import '../popup/index.scss';
+
+.cub-theme-dark {
+  .cub-action-sheet {
+    .cub-action-sheet__cancel {
+      border-top: 1px solid $dark-background2;
+    }
+    .cub-action-sheet__title {
+      border-bottom: 1px solid $dark-background2;
+    }
+    .cub-action-sheet__cancel,
+    .cub-action-sheet__item,
+    .cub-action-sheet__title {
+      background: $dark-background;
+      color: $dark-color;
+    }
+  }
+}
+
+.cub-action-sheet {
+  display: block;
+  .cub-action-sheet__title {
+    display: block;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    background-color: $white;
+    border-bottom: 1px solid $actionsheet-light-color;
+    font-size: $font-size-base;
+    color: $title-color;
+  }
+  .cub-action-sheet__menu {
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .cub-action-sheet__cancel,
+  .cub-action-sheet__item {
+    display: block;
+    padding: 10px;
+    line-height: $actionsheet-item-line-height;
+    font-size: $actionsheet-item-font-size;
+    color: $actionsheet-item-font-color;
+    text-align: center;
+    background-color: #fff;
+    border-bottom: $actionsheet-item-border-bottom;
+    cursor: pointer;
+  }
+
+  .cub-action-sheet__desc {
+    font-size: $actionsheet-item-font-size;
+    color: #999;
+    cursor: default;
+  }
+
+  .cub-action-sheet__subdesc {
+    display: block;
+    font-size: $actionsheet-item-subdesc-font-size;
+    color: #999;
+  }
+
+  .cub-action-sheet__item--disabled {
+    color: #e1e1e1 !important;
+    cursor: not-allowed;
+  }
+  .cub-action-sheet__item--loading {
+    cursor: default;
+  }
+
+  .cub-action-sheet__cancel {
+    margin-top: 5px;
+    border-top: $actionsheet-item-cancel-border-top;
+  }
+}

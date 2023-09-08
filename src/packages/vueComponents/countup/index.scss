@@ -1,0 +1,59 @@
+.cub-theme-dark {
+  .cub-countup {
+    background: $dark-background;
+    color: $dark-color;
+    box-shadow: none;
+  }
+}
+.cub-countup {
+  display: block;
+  padding: 5px 20px;
+  color: #000;
+  font-weight: bold;
+  font-family: PingFangSC-Regular;
+  .cub-countup__number {
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    .cub-countup__number-item {
+      position: absolute;
+      transition: none;
+      list-style: none;
+      .cub-countup__number-item__span {
+        display: block;
+        font-family: PingFangSC-Regular;
+      }
+    }
+  }
+  .cub-countup-pointstyl {
+    position: absolute;
+    display: block;
+  }
+  .cub-countup__machine {
+    display: block;
+    overflow: hidden;
+    .cub-countup__machine-item {
+      float: left;
+      background-position: center 0;
+      background-repeat: repeat-y;
+      background-attachment: scroll;
+    }
+  }
+  .cub-countup__numberimg {
+    position: relative;
+    display: inline-block;
+    .cub-countup__numberimg__item {
+      position: absolute;
+      display: block;
+      transition: none;
+      display: inline-block;
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      font-family: PingFangSC-Regular;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.cub-trend-arrow {
+  display: inline-block;
+  font-size: $trendarrow-font-size;
+  &-icon-before {
+    margin-right: $trendarrow-before-icon-margin;
+  }
+  &-icon-after {
+    margin-left: $trendarrow-before-icon-margin;
+  }
+  &-rate {
+    vertical-align: middle;
+    display: inline;
+  }
+  .cub-icon {
+    vertical-align: middle;
+  }
+}

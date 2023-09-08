@@ -1,0 +1,30 @@
+.cub-col {
+  float: left;
+  box-sizing: border-box;
+  word-break: break-all;
+
+  &-gutter {
+    &:last-child {
+      padding-right: 0 !important;
+    }
+    &:first-child {
+      padding-left: 0 !important;
+    }
+  }
+  &-gutter-row-frist{
+    padding-left: 0 !important;
+  }
+  &-gutter-row-last {
+    padding-right: 0 !important;
+  }
+}
+
+@for $i from 1 through 24 {
+  .cub-col-offset-#{$i} {
+    margin-left: calc((100 / 24) * #{$i} * 1%);
+  }
+
+  .cub-col-#{$i} {
+    width: calc((100 / 24) * #{$i} * 1%);
+  }
+}

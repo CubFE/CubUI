@@ -1,0 +1,142 @@
+<template>
+  <div class="demo">
+    <h2>{{ translate('basic') }}</h2>
+    <cub-cell>
+      <cub-switch v-model="checked1" />
+    </cub-cell>
+
+    <h2>{{ translate('title1') }}</h2>
+    <cub-cell>
+      <cub-switch :v-model="translate('text1')" :activeValue="translate('text1')" :inactiveValue="translate('text2')" />
+    </cub-cell>
+
+    <h2>{{ translate('title2') }}</h2>
+    <cub-cell>
+      <cub-switch v-model="checked2" disable />
+    </cub-cell>
+
+    <h2>{{ translate('title3') }}</h2>
+    <cub-cell>
+      <cub-switch v-model="checked3" loading activeColor="red" />
+    </cub-cell>
+
+    <h2>{{ translate('title4') }}</h2>
+    <cub-cell>
+      <cub-switch v-model="checked4" @change="change" />
+    </cub-cell>
+
+    <h2>{{ translate('title5') }}</h2>
+    <cub-cell>
+      <cub-switch :model-value="checkedAsync" @change="changeAsync" :loading="loadingAsync" />
+    </cub-cell>
+
+    <h2>{{ translate('title6') }}</h2>
+    <cub-cell>
+      <cub-switch v-model="checked6" active-color="blue" />
+    </cub-cell>
+
+    <h2>{{ translate('title7') }}</h2>
+    <cub-cell>
+      <cub-switch
+        v-model="checked7"
+        :active-text="translate('text1')"
+        :inactive-text="translate('text2')"
+        class="switch-demo1"
+      />
+    </cub-cell>
+
+    <h2>{{ translate('title8') }}</h2>
+    <cub-cell>
+      <cub-switch v-model="checked8" loading>
+        <template #icon>
+          <Loading name="loading" />
+        </template>
+      </cub-switch>
+    </cub-cell>
+  </div>
+</template>
+
+<script lang="ts">
+import { ref, reactive, toRefs, defineComponent } from 'vue';
+import { createComponent } from '@/packages/utils/create';
+import { Loading } from '@cubfe/icons-vue';
+import { showToast } from '@/packages/cubui.vue';
+const { translate } = createComponent('switch');
+import { useTranslate } from '@/sites/assets/util/useTranslate';
+const initTranslate = () =>
+  useTranslate({
+    'zh-CN': {
+      basic: '基础用法',
+      title1: '值为字符串',
+      title2: '禁用状态',
+      title3: '加载状态',
+      title4: 'change 事件',
+      title5: '异步控制',
+      title6: '自定义颜色',
+      title7: '支持文字',
+      title8: '自定义加载图标',
+      text1: '开',
+      text2: '关'
+    },
+    'en-US': {
+      basic: 'Basic Usage',
+      title1: 'Value Is String',
+      title2: 'Disabled',
+      title3: 'Loading',
+      title4: 'Change Event',
+      title5: 'Async Control',
+      title6: 'Custom Color',
+      title7: 'Support Text',
+      title8: 'Custom loading icon',
+      text1: 'Open',
+      text2: 'Closed'
+    }
+  });
+export default defineComponent({
+  components: { Loading },
+  setup() {
+    initTranslate();
+    const data = reactive({
+      checked1: true,
+      checked2: true,
+      checked3: true,
+      checked4: true,
+      checked6: true,
+      checked7: true,
+      checked8: true
+    });
+    const checkedAsync = ref(true);
+    const loadingAsync = ref(false);
+
+    // const checkedStr = ref('开');
+
+    const change = (value: boolean) => {
+      showToast.text(`value：${value}`);
+    };
+
+    const changeAsync = (value: boolean) => {
+      showToast.text(`after 2 second： ${value}`);
+      loadingAsync.value = true;
+      setTimeout(() => {
+        checkedAsync.value = value;
+        loadingAsync.value = false;
+      }, 2000);
+    };
+
+    return {
+      ...toRefs(data),
+      checkedAsync,
+      // checkedStr,
+      loadingAsync,
+      change,
+      changeAsync,
+      translate
+    };
+  }
+});
+</script>
+<style lang="scss" scoped>
+.switch-demo1 {
+  // width: 50px;
+}
+</style>

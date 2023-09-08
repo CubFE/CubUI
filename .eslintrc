@@ -1,0 +1,11 @@
+{
+  "root": true,
+  "extends": ["@cubui/eslint-config"],
+  "ignorePatterns": [
+    "packages/cubui-playground/dist/**",
+    "packages/cubui-taro-demo/**/*",
+    "packages/cubui-touch-emulator/dist/**",
+    "packages/cubui-vscode-extension/dist/**",
+    "src/sites/**"
+  ]
+}

@@ -230,7 +230,7 @@ app.use(SwiperItem);
       <img src="https://storage.360buyimg.com/jdc-article/fristfabu.jpg" alt="" />
     </cub-swiper-item>
     <template v-slot:page>
-      <div class="page"> {{ current }}/4 </div>
+      <view class="page"> {{ current }}/4 </view>
     </template>
   </cub-swiper>
 </template>
@@ -294,7 +294,7 @@ app.use(SwiperItem);
       <img src="https://storage.360buyimg.com/jdc-article/fristfabu.jpg" alt="" />
     </cub-swiper-item>
     <template v-slot:page>
-      <div class="page"> {{ current1 }}/4 </div>
+      <view class="page"> {{ current1 }}/4 </view>
     </template>
   </cub-swiper>
 </template>

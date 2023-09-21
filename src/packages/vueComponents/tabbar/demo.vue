@@ -15,7 +15,7 @@
       </cub-tabbar-item>
       <cub-tabbar-item :tab-title="translate('title')">
         <template #icon>
-          <Find></Find>
+          <Compass></Compass>
         </template>
       </cub-tabbar-item>
       <cub-tabbar-item :tab-title="translate('title')">
@@ -123,7 +123,7 @@ import { h, ref, defineComponent } from 'vue';
 import { createComponent } from '@/packages/utils/create';
 const { translate } = createComponent('tabbar');
 import { useTranslate } from '@/sites/assets/util/useTranslate';
-import { Home, Category, Find, Cart, Me } from '@cubfe/icons-vue';
+import { Home, Category, Compass, Cart, Me } from '@cubfe/icons-vue';
 const initTranslate = () =>
   useTranslate({
     'zh-CN': {
@@ -150,7 +150,7 @@ const initTranslate = () =>
     }
   });
 export default defineComponent({
-  components: { Home, Category, Find, Cart, Me },
+  components: { Home, Category, Compass, Cart, Me },
   props: {},
   setup() {
     initTranslate();
@@ -177,7 +177,7 @@ export default defineComponent({
       },
       {
         title: '标签',
-        icon: h(Find),
+        icon: h(Compass),
         name: 'find'
       },
       {

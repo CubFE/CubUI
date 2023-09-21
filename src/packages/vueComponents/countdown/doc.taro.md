@@ -169,9 +169,9 @@ app.use(Countdown);
 <template>
   <cub-cell>
     <cub-countdown :endTime="end" :paused="paused" @on-paused="onpaused" @on-restart="onrestart" />
-    <div style="position:absolute;right:10px;top:9px">
+    <view style="position:absolute;right:10px;top:9px">
       <cub-button type="primary" size="small" @click="toggle">{{ paused ? 'start' : 'stop' }}</cub-button>
-    </div>
+    </view>
   </cub-cell>
 </template>
 <script>
@@ -213,14 +213,14 @@ app.use(Countdown);
 <template>
   <cub-cell>
     <cub-countdown v-model="resetTime" :endTime="end">
-      <div class="countdown-part-box">
-        <div class="part-item-symbol">{{ resetTime.d }}天</div>
-        <div class="part-item h">{{ resetTime.h }}</div>
+      <view class="countdown-part-box">
+        <view class="part-item-symbol">{{ resetTime.d }}天</view>
+        <view class="part-item h">{{ resetTime.h }}</view>
         <span class="part-item-symbol">:</span>
-        <div class="part-item m">{{ resetTime.m }}</div>
+        <view class="part-item m">{{ resetTime.m }}</view>
         <span class="part-item-symbol">:</span>
-        <div class="part-item s">{{ resetTime.s }}</div>
-      </div>
+        <view class="part-item s">{{ resetTime.s }}</view>
+      </view>
     </cub-countdown>
   </cub-cell>
 </template>

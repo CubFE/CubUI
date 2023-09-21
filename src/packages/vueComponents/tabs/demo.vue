@@ -86,7 +86,7 @@
           :key="item.paneKey"
           v-for="item in state.list6"
         >
-          <Dongdong />
+          <Shop />
           <span class="cub-tabs__titles-item__text">{{ item.title }}</span>
           <span class="cub-tabs__titles-item__line"></span>
         </div>
@@ -102,7 +102,7 @@
 import { reactive, computed, defineComponent } from 'vue';
 import { createComponent } from '@/packages/utils/create';
 const { translate } = createComponent('tabs');
-import { Dongdong } from '@cubfe/icons-vue';
+import { Shop } from '@cubfe/icons-vue';
 import { useTranslate } from '@/sites/assets/util/useTranslate';
 const initTranslate = () =>
   useTranslate({
@@ -138,7 +138,7 @@ const initTranslate = () =>
     }
   });
 export default defineComponent({
-  components: { Dongdong },
+  components: { Shop },
   props: {},
   setup() {
     initTranslate();

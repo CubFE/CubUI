@@ -22,7 +22,7 @@ app.use(Navbar);
 <template>
   <cub-navbar @on-click-back="back" @on-click-title="title" title="订单详情">
     <template #left>
-      <div>返回</div>
+      <view>返回</view>
     </template>
     <template #right>
       <ShareN width="16px" />

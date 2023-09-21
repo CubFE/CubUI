@@ -20,7 +20,7 @@ app.use(Backtop);
 <view class="demo">
   <cub-backtop>
     <template v-slot:content>
-      <div v-for="(item, index) in 24" class="test">{{index}}</div>
+      <view v-for="(item, index) in 24" class="test">{{index}}</view>
     </template>
   </cub-backtop>
 </view>

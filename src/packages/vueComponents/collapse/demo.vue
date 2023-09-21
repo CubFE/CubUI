@@ -36,7 +36,7 @@
         <template #value> {{ translate('title4') }} </template>
         {{ translate('desc8') }}
       </cub-collapse-item>
-      <cub-collapse-item :title="translate('title2')" :name="2" :value="translate('title6')" :icon="Follow">
+      <cub-collapse-item :title="translate('title2')" :name="2" :value="translate('title6')" :icon="Heart">
         {{ translate('desc9') }}
       </cub-collapse-item>
     </cub-collapse>
@@ -63,7 +63,7 @@
 </template>
 <script lang="ts">
 import { reactive, toRefs, defineComponent } from 'vue';
-import { Notice, Follow } from '@cubfe/icons-vue';
+import { Notice, Heart } from '@cubfe/icons-vue';
 import { createComponent } from '@/packages/utils/create';
 const { translate } = createComponent('collapse');
 import { useTranslate } from '@/sites/assets/util/useTranslate';
@@ -143,7 +143,7 @@ export default defineComponent({
     };
     return {
       Notice,
-      Follow,
+      Heart,
       translate,
       change,
       ...toRefs(data)

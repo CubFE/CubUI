@@ -222,10 +222,10 @@ app.use(TimeDetail);
     @select="handleSelected2"
   >
     <template #title>
-      <div class="timeselect-title">
+      <view class="timeselect-title">
         <p class="title">我是标题</p>
         <p class="subtitle">我是副标题</p>
-      </div>
+      </view>
     </template>
     <template #pannel>
       <cub-time-pannel name="2月23日(今天)" pannel-key="0" @change="handleChange2"></cub-time-pannel>

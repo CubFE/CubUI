@@ -103,7 +103,7 @@ export default defineConfig({
     cssTarget: ['chrome61'],
     rollupOptions: {
       input: {
-        // doc: resolve(__dirname, 'index.html'),
+        doc: resolve(__dirname, 'index.html'),
         mobile: resolve(__dirname, 'demo.html')
       },
       output: {

@@ -25,6 +25,11 @@ const getCompName = (name) => {
     });
   }
   const packageName = packages.find((item) => item.name.toLowerCase() === name.toLowerCase());
+  if(packageName) {
+    console.log('打包组件：'+packageName.name)
+  }else{
+    console.log('问题组件：'+ name)
+  }
   return packageName.name;
 };
 

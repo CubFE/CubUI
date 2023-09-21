@@ -18,7 +18,7 @@ app.use(Drag);
 
 ```html
 <cub-drag>
-  <div class="touch-dom">可点击，可拖拽</div>
+  <view class="touch-dom">可点击，可拖拽</view>
 </cub-drag>
 ```
 
@@ -26,7 +26,7 @@ app.use(Drag);
 
 ```html
 <cub-drag direction="x">
-  <div class="touch-dom">只能在X轴拖动</div>
+  <view class="touch-dom">只能在X轴拖动</view>
 </cub-drag>
 ```
 
@@ -34,7 +34,7 @@ app.use(Drag);
 
 ```html
 <cub-drag direction="y">
-  <div class="touch-dom">只能在Y轴拖动</div>
+  <view class="touch-dom">只能在Y轴拖动</view>
 </cub-drag>
 ```
 

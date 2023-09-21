@@ -313,7 +313,7 @@ app.use(TabPane);
 <template>
   <cub-tabs v-model="state.tab7value">
     <template v-slot:titles>
-      <div
+      <view
         class="cub-tabs__titles-item"
         @click="state.tab7value=item.paneKey"
         :class="{active:state.tab7value==item.paneKey}"
@@ -323,7 +323,7 @@ app.use(TabPane);
         <Dongdong />
         <span class="cub-tabs__titles-item__text">{{item.title}}</span>
         <span class="cub-tabs__titles-item__line"></span>
-      </div>
+      </view>
     </template>
     <cub-tab-pane v-for="item in state.list6" :pane-key="item.paneKey"> {{item.title}} </cub-tab-pane>
   </cub-tabs>

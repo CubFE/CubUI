@@ -163,7 +163,7 @@ app.use(Popup);
 <template>
   <cub-cell title="多层堆叠" is-link @click="showPop1 = true"></cub-cell>
   <cub-popup :style="{ padding: '30px 50px' }" v-model:visible="showPop1">
-    <div @click="showPop2 = true">点击它</div>
+    <view @click="showPop2 = true">点击它</view>
   </cub-popup>
   <cub-popup :style="{ padding: '30px 50px' }" v-model:visible="showPop2">正文</cub-popup>
 </template>

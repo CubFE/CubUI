@@ -123,13 +123,13 @@ app.use(Tour);
 <template>
   <cub-cell title="点击试试" @click="showTour2 = true">
     <template v-slot:link>
-      <div class="tour-demo-img" v-for="i in [1,2,3]">
+      <view class="tour-demo-img" v-for="i in [1,2,3]">
         <img
           style="width:20px;height:20px;margin-right:10px"
           id="target6"
           src="https://img14.360buyimg.com/imagetools/jfs/t1/167902/2/8762/791358/603742d7E9b4275e3/e09d8f9a8bf4c0ef.png"
         />
-      </div>
+      </view>
     </template>
   </cub-cell>
 
@@ -196,11 +196,11 @@ app.use(Tour);
     :offset="[8, 8]"
     :closeOnClickOverlay="false"
   >
-    <div class="tour-demo-custom-content">
-      <div>cubui 4.x 即将发布，敬请期待</div>
-      <cub-divider direction="vertical" />
-      <div @click="showTour4 = false">知道了</div>
-    </div>
+    <view class="tour-demo-custom-content">
+      <view>cubui 4.x 即将发布，敬请期待</view>
+      <cub-viewider direction="vertical" />
+      <view @click="showTour4 = false">知道了</view>
+    </view>
   </cub-tour>
 </template>
 
@@ -228,7 +228,7 @@ app.use(Tour);
     width: max-content;
     align-items: center;
   }
-  .cub-divider {
+  .cub-viewider {
     border-color: #fff;
   }
 </style>

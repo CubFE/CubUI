@@ -52,9 +52,9 @@ const handleClickStep = (index) => {
     <cub-step></cub-step>
     <cub-step></cub-step>
   </cub-steps>
-  <div class="steps-button">
+  <view class="steps-button">
     <cub-button size="mini" type="primary" @click="handleStep('current2')">{{ translate('next') }}</cub-button>
-  </div>
+  </view>
 </template>
 <script setup>
 import { ref } from 'vue';

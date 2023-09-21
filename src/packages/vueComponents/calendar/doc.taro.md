@@ -394,11 +394,11 @@ app.use(Calendar);
     @choose="setChooseValue"
   >
     <template #btn>
-      <div class="wrapper">
-        <div class="d_div"> <span class="d_btn" @click="goDate">去某个时间</span></div>
-        <div class="d_div"> <span class="d_btn" @click="clickBtn">最近七天</span></div>
-        <div class="d_div"> <span class="d_btn" @click="clickBtn1">当月</span></div>
-      </div>
+      <view class="wrapper">
+        <view class="d_view"> <span class="d_btn" @click="goDate">去某个时间</span></view>
+        <view class="d_view"> <span class="d_btn" @click="clickBtn">最近七天</span></view>
+        <view class="d_view"> <span class="d_btn" @click="clickBtn1">当月</span></view>
+      </view>
     </template>
     <template #day="date">
       <span>{{ date.date.day }}</span>
@@ -495,7 +495,7 @@ app.use(Calendar);
     padding: 0 40px;
     justify-content: center;
   }
-  .d_div {
+  .d_view {
     margin: 0px 5px;
   }
   .d_btn {
@@ -638,7 +638,7 @@ app.use(Calendar);
 
 ```html
 <template>
-  <div class="test-calendar-wrapper">
+  <view class="test-calendar-wrapper">
     <cub-calendar
       :poppable="false"
       :default-value="date"
@@ -648,7 +648,7 @@ app.use(Calendar);
       :end-date="`2020-12-30`"
     >
     </cub-calendar>
-  </div>
+  </view>
 </template>
 <script lang="ts">
   import { reactive, toRefs } from 'vue';

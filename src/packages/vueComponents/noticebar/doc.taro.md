@@ -172,7 +172,7 @@ app.use(Noticebar);
 ```html
 <template>
   <cub-noticebar direction="vertical" :height="50" :speed="10" :standTime="1000" :list="[]">
-    <div class="custom-item" :data-index="index" v-for="(item,index) in horseLamp3" :key="index">{{item}}</div>
+    <view class="custom-item" :data-index="index" v-for="(item,index) in horseLamp3" :key="index">{{item}}</view>
   </cub-noticebar>
 </template>
 

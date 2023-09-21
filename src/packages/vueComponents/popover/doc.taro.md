@@ -178,12 +178,12 @@ Popover 支持明朗和暗黑两种风格，默认为明朗风格，将 `theme` 
     </template>
 
     <template #content>
-      <div class="self-content">
-        <div class="self-content-item" v-for="(item, index) in selfContent" :key="index">
+      <view class="self-content">
+        <view class="self-content-item" v-for="(item, index) in selfContent" :key="index">
           <Service></Service>
-          <div class="self-content-desc">{{ item.desc }}</div>
-        </div>
-      </div>
+          <view class="self-content-desc">{{ item.desc }}</view>
+        </view>
+      </view>
     </template>
   </cub-popover>
 </template>
@@ -288,9 +288,9 @@ bottom-end    # 底部右侧位置
       @close="closePicker"
     >
       <template #top>
-        <div class="brickBox">
-          <div class="brick" id="pickerTarget"></div>
-        </div>
+        <view class="brickBox">
+          <view class="brick" id="pickerTarget"></view>
+        </view>
       </template>
     </cub-picker>
   </cub-popup>

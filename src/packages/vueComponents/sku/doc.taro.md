@@ -96,10 +96,10 @@ app.use(Sku);
     :btnOptions="['buy', 'cart']"
   >
     <template #sku-operate>
-      <div class="sku-operate-box">
+      <view class="sku-operate-box">
         <cub-button class="sku-operate-box-dis" type="warning">查看相似商品</cub-button>
         <cub-button class="sku-operate-box-dis" type="info">到货通知</cub-button>
-      </div>
+      </view>
     </template>
   </cub-sku>
 </template>
@@ -219,7 +219,7 @@ app.use(Sku);
       });
 
       const stepperExtraText = () => {
-        return `<div style="width:100%;text-align:right;color:#F00">2 件起售</div>`;
+        return `<view style="width:100%;text-align:right;color:#F00">2 件起售</view>`;
       };
       // inputNumber 更改
       const changeStepper = (count: number) => {
@@ -278,10 +278,10 @@ Sku 组件默认划分为若干区域，这些区域都定义成了插槽，可�
   >
     <!-- 商品展示区，价格区域 -->
     <template #sku-header-price>
-      <div>
+      <view>
         <cub-price :price="goods.price" :needSymbol="true" :thousands="false"> </cub-price>
         <span class="tag"></span>
-      </div>
+      </view>
     </template>
     <!-- 商品展示区，编号区域 -->
     <template #sku-header-extra>
@@ -289,21 +289,21 @@ Sku 组件默认划分为若干区域，这些区域都定义成了插槽，可�
     </template>
     <!-- sku 展示区上方与商品信息展示区下方区域，无默认展示内容 -->
     <template #sku-select-top>
-      <div class="address">
+      <view class="address">
         <cub-cell
           style="box-shadow:none;padding:13px 0"
           title="送至"
           :desc="addressDesc"
           @click="showAddressPopup=true"
         ></cub-cell>
-      </div>
+      </view>
     </template>
     <!-- 底部按钮操作区 -->
     <template #sku-operate>
-      <div class="sku-operate-box">
+      <view class="sku-operate-box">
         <cub-button class="sku-operate-item" shape="square" type="warning">加入购物车</cub-button>
         <cub-button class="sku-operate-item" shape="square" type="primary">立即购买</cub-button>
-      </div>
+      </view>
     </template>
   </cub-sku>
 

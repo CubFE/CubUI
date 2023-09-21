@@ -31,7 +31,7 @@ import { createComponent } from '@/packages/utils/create';
 import { TableColumnProps } from './types';
 import { showToast } from '@/packages/cubui.vue';
 import Button from '@/packages/vueComponents/button/index.vue';
-import { Dongdong } from '@cubfe/icons-vue';
+import { Shop } from '@cubfe/icons-vue';
 const { translate } = createComponent('table');
 import { useTranslate } from '@/sites/assets/util/useTranslate';
 const initTranslate = () =>
@@ -270,7 +270,7 @@ export default defineComponent({
           sex: translate('woman'),
           record: translate('undergraduate'),
           render: () => {
-            return h(Dongdong, { width: '14px', height: '14px' });
+            return h(Shop, { width: '14px', height: '14px' });
           }
         },
         {

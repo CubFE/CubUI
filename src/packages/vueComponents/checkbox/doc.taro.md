@@ -201,8 +201,8 @@ app.use(CheckboxGroup);
     <cub-checkbox label="4">组合复选框</cub-checkbox>
   </cub-checkbox-group>
   <cub-cell>
-    <div class="demo-check">当前选中值</div>
-    <div>{{ checkboxgroup1 }}</div>
+    <view class="demo-check">当前选中值</view>
+    <view>{{ checkboxgroup1 }}</view>
   </cub-cell>
 </template>
 <script lang="ts">
@@ -292,8 +292,8 @@ app.use(CheckboxGroup);
       </cub-checkbox-group>
     </cub-cell>
     <cub-cell>
-      <div class="demo-check">选中</div>
-      <div>{{ checkboxgroup4 }}</div>
+      <view class="demo-check">选中</view>
+      <view>{{ checkboxgroup4 }}</view>
     </cub-cell>
   </cub-cell-group>
 </template>

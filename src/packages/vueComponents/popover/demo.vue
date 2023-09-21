@@ -108,7 +108,7 @@ import { reactive, ref, toRefs, h, defineComponent } from 'vue';
 import { createComponent, renderIcon } from '@/packages/utils/create';
 const { translate } = createComponent('popover');
 import { useTranslate } from '@/sites/assets/util/useTranslate';
-import { Service, Notice, Location, Category, Scan2, Message, Cart2, My2 } from '@cubfe/icons-vue';
+import { Service, Notice, Location, Category, Scan2, Message, Cart, Me } from '@cubfe/icons-vue';
 
 const initTranslate = () =>
   useTranslate({
@@ -203,7 +203,7 @@ export default defineComponent({
       {
         name: 'option1',
         icon: () => {
-          return h(My2, {
+          return h(Me, {
             width: '14px',
             color: 'rgba(250, 44, 25, 1)'
           });
@@ -212,7 +212,7 @@ export default defineComponent({
       {
         name: 'option2',
         icon: () => {
-          return h(Cart2, {
+          return h(Cart, {
             width: '14px'
           });
         }

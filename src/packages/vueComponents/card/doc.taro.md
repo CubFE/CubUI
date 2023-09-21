@@ -63,11 +63,11 @@ const state = reactive({
     :shopName="state.shopName"
   >
     <template #prolist>
-      <div class="search_prolist_attr">
+      <view class="search_prolist_attr">
         <span class="word">活鲜</span>
         <span class="word">礼盒</span>
         <span class="word">国产</span>
-      </div>
+      </view>
     </template>
   </cub-card>
 </template>
@@ -122,7 +122,7 @@ const state = reactive({
     :shopName="state.shopName"
   >
     <template #shop-tag>
-      <div>自定义店铺介绍</div>
+      <view>自定义店铺介绍</view>
     </template>
     <template #price>
       <span>询价</span>
@@ -178,7 +178,7 @@ const state = reactive({
     :shopName="state.shopName"
   >
     <template #footer>
-      <div class="customize">自定义右下角内容</div>
+      <view class="customize">自定义右下角内容</view>
     </template>
   </cub-card>
 </template>

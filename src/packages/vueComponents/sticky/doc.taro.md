@@ -36,11 +36,11 @@ app.use(Sticky);
 
 ```vue
 <template>
-  <div style="height: 200vh; padding-top: 200px;">
+  <view style="height: 200vh; padding-top: 200px;">
     <cub-sticky top="120">
       <cub-button type="primary">吸顶距离120px</cub-button>
     </cub-sticky>
-  </div>
+  </view>
 </template>
 ```
 

@@ -1,4 +1,4 @@
-# Divider 分割线
+# viewider 分割线
 
 ### 介绍
 
@@ -8,10 +8,10 @@
 
 ```javascript
 import { createApp } from 'vue';
-import { Divider } from '@cubui/cubui-taro';
+import { viewider } from '@cubui/cubui-taro';
 
 const app = createApp();
-app.use(Divider);
+app.use(viewider);
 ```
 
 ### 基础用法
@@ -22,7 +22,7 @@ app.use(Divider);
 
 ```html
 <template>
-  <cub-divider />
+  <cub-viewider />
 </template>
 ```
 
@@ -36,7 +36,7 @@ app.use(Divider);
 
 ```html
 <template>
-  <cub-divider>文本</cub-divider>
+  <cub-viewider>文本</cub-viewider>
 </template>
 ```
 
@@ -50,8 +50,8 @@ app.use(Divider);
 
 ```html
 <template>
-  <cub-divider content-position="left">文本</cub-divider>
-  <cub-divider content-position="right">文本</cub-divider>
+  <cub-viewider content-position="left">文本</cub-viewider>
+  <cub-viewider content-position="right">文本</cub-viewider>
 </template>
 ```
 
@@ -65,7 +65,7 @@ app.use(Divider);
 
 ```html
 <template>
-  <cub-divider dashed>文本</cub-divider>
+  <cub-viewider dashed>文本</cub-viewider>
 </template>
 ```
 
@@ -79,7 +79,7 @@ app.use(Divider);
 
 ```html
 <template>
-  <cub-divider :style="{ color: '#1989fa', borderColor: '#1989fa', padding: '0 16px' }">文本</cub-divider>
+  <cub-viewider :style="{ color: '#1989fa', borderColor: '#1989fa', padding: '0 16px' }">文本</cub-viewider>
 </template>
 ```
 
@@ -91,13 +91,13 @@ app.use(Divider);
 
 ```html
 <template>
-  <div :style="{ fontSize: '14px', marginLeft: '27px', color: '#909ca4' }">
+  <view :style="{ fontSize: '14px', marginLeft: '27px', color: '#909ca4' }">
     <text>文本</text>
-    <cub-divider direction="vertical" />
+    <cub-viewider direction="vertical" />
     <text>文本</text>
-    <cub-divider direction="vertical" />
+    <cub-viewider direction="vertical" />
     <text>文本</text>
-  </div>
+  </view>
 </template>
 ```
 
@@ -128,13 +128,13 @@ app.use(Divider);
 
 | 名称                               | 默认值                   |
 | ---------------------------------- | ------------------------ |
-| --cub-divider-margin               | _16px 0_                 |
-| --cub-divider-text-font-size       | _var(--cub-font-size-2)_ |
-| --cub-divider-text-color           | _#909ca4_                |
-| --cub-divider-line-height          | _2px_                    |
-| --cub-divider-before-margin-right  | _16px_                   |
-| --cub-divider-after-margin-left    | _16px_                   |
-| --cub-divider-vertical-height      | _12px_                   |
-| --cub-divider-vertical-top         | _2px_                    |
-| --cub-divider-vertical-border-left | _rgba(0, 0, 0, 0.06)_    |
-| --cub-divider-vertical-margin      | _0 8px_                  |
+| --cub-viewider-margin               | _16px 0_                 |
+| --cub-viewider-text-font-size       | _var(--cub-font-size-2)_ |
+| --cub-viewider-text-color           | _#909ca4_                |
+| --cub-viewider-line-height          | _2px_                    |
+| --cub-viewider-before-margin-right  | _16px_                   |
+| --cub-viewider-after-margin-left    | _16px_                   |
+| --cub-viewider-vertical-height      | _12px_                   |
+| --cub-viewider-vertical-top         | _2px_                    |
+| --cub-viewider-vertical-border-left | _rgba(0, 0, 0, 0.06)_    |
+| --cub-viewider-vertical-margin      | _0 8px_                  |

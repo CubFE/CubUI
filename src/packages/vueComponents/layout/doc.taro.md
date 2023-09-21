@@ -25,40 +25,40 @@ Layout 组件提供 24 列栅格，通过在 Col 上添加 span 属性设置列�
 <template>
   <cub-row>
     <cub-col :span="24">
-      <div class="flex-content">span:24</div>
+      <view class="flex-content">span:24</view>
     </cub-col>
   </cub-row>
   <cub-row>
     <cub-col :span="12">
-      <div class="flex-content">span:12</div>
+      <view class="flex-content">span:12</view>
     </cub-col>
     <cub-col :span="12">
-      <div class="flex-content flex-content-light">span:12</div>
+      <view class="flex-content flex-content-light">span:12</view>
     </cub-col>
   </cub-row>
   <cub-row>
     <cub-col :span="8">
-      <div class="flex-content">span:8</div>
+      <view class="flex-content">span:8</view>
     </cub-col>
     <cub-col :span="8">
-      <div class="flex-content flex-content-light">span:8</div>
+      <view class="flex-content flex-content-light">span:8</view>
     </cub-col>
     <cub-col :span="8">
-      <div class="flex-content">span:8</div>
+      <view class="flex-content">span:8</view>
     </cub-col>
   </cub-row>
   <cub-row>
     <cub-col :span="6">
-      <div class="flex-content">span:6</div>
+      <view class="flex-content">span:6</view>
     </cub-col>
     <cub-col :span="6">
-      <div class="flex-content flex-content-light">span:6</div>
+      <view class="flex-content flex-content-light">span:6</view>
     </cub-col>
     <cub-col :span="6">
-      <div class="flex-content">span:6</div>
+      <view class="flex-content">span:6</view>
     </cub-col>
     <cub-col :span="6">
-      <div class="flex-content">span:6</div>
+      <view class="flex-content">span:6</view>
     </cub-col>
   </cub-row>
 </template>
@@ -96,13 +96,13 @@ Layout 组件提供 24 列栅格，通过在 Col 上添加 span 属性设置列�
 <template>
   <cub-row :gutter="10">
     <cub-col :span="8">
-      <div class="flex-content">span:8</div>
+      <view class="flex-content">span:8</view>
     </cub-col>
     <cub-col :span="8">
-      <div class="flex-content flex-content-light">span:8</div>
+      <view class="flex-content flex-content-light">span:8</view>
     </cub-col>
     <cub-col :span="8">
-      <div class="flex-content">span:8</div>
+      <view class="flex-content">span:8</view>
     </cub-col>
   </cub-row>
 </template>
@@ -140,68 +140,68 @@ Layout 组件提供 24 列栅格，通过在 Col 上添加 span 属性设置列�
 <template>
   <cub-row type="flex" wrap="nowrap">
     <cub-col :span="6">
-      <div class="flex-content">span:6</div>
+      <view class="flex-content">span:6</view>
     </cub-col>
     <cub-col :span="6">
-      <div class="flex-content flex-content-light">span:6</div>
+      <view class="flex-content flex-content-light">span:6</view>
     </cub-col>
     <cub-col :span="6">
-      <div class="flex-content">span:6</div>
+      <view class="flex-content">span:6</view>
     </cub-col>
   </cub-row>
   <cub-row type="flex" justify="center">
     <cub-col :span="6">
-      <div class="flex-content">span:6</div>
+      <view class="flex-content">span:6</view>
     </cub-col>
     <cub-col :span="6">
-      <div class="flex-content flex-content-light">span:6</div>
+      <view class="flex-content flex-content-light">span:6</view>
     </cub-col>
     <cub-col :span="6">
-      <div class="flex-content">span:6</div>
+      <view class="flex-content">span:6</view>
     </cub-col>
   </cub-row>
   <cub-row type="flex" justify="end">
     <cub-col :span="6">
-      <div class="flex-content">span:6</div>
+      <view class="flex-content">span:6</view>
     </cub-col>
     <cub-col :span="6">
-      <div class="flex-content flex-content-light">span:6</div>
+      <view class="flex-content flex-content-light">span:6</view>
     </cub-col>
     <cub-col :span="6">
-      <div class="flex-content">span:6</div>
+      <view class="flex-content">span:6</view>
     </cub-col>
   </cub-row>
   <cub-row type="flex" justify="space-between">
     <cub-col :span="6">
-      <div class="flex-content">span:6</div>
+      <view class="flex-content">span:6</view>
     </cub-col>
     <cub-col :span="6">
-      <div class="flex-content flex-content-light">span:6</div>
+      <view class="flex-content flex-content-light">span:6</view>
     </cub-col>
     <cub-col :span="6">
-      <div class="flex-content">span:6</div>
+      <view class="flex-content">span:6</view>
     </cub-col>
   </cub-row>
   <cub-row type="flex" justify="space-around">
     <cub-col :span="6">
-      <div class="flex-content">span:6</div>
+      <view class="flex-content">span:6</view>
     </cub-col>
     <cub-col :span="6">
-      <div class="flex-content flex-content-light">span:6</div>
+      <view class="flex-content flex-content-light">span:6</view>
     </cub-col>
     <cub-col :span="6">
-      <div class="flex-content">span:6</div>
+      <view class="flex-content">span:6</view>
     </cub-col>
   </cub-row>
   <cub-row type="flex" justify="space-evenly">
     <cub-col :span="6">
-      <div class="flex-content">span:6</div>
+      <view class="flex-content">span:6</view>
     </cub-col>
     <cub-col :span="6">
-      <div class="flex-content flex-content-light">span:6</div>
+      <view class="flex-content flex-content-light">span:6</view>
     </cub-col>
     <cub-col :span="6">
-      <div class="flex-content">span:6</div>
+      <view class="flex-content">span:6</view>
     </cub-col>
   </cub-row>
 </template>

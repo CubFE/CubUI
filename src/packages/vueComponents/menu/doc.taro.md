@@ -73,10 +73,10 @@ app.use(MenuItem);
   <cub-menu>
     <cub-menu-item v-model="state.value1" :options="state.options1" />
     <cub-menu-item title="筛选" ref="item">
-      <div :style="{display: 'flex', flex: 1, 'justify-content': 'space-between', 'align-items': 'center'}">
-        <div :style="{ marginRight: '10px'}">自定义内容</div>
+      <view :style="{display: 'flex', flex: 1, 'justify-content': 'space-between', 'align-items': 'center'}">
+        <view :style="{ marginRight: '10px'}">自定义内容</view>
         <cub-button @click="onConfirm">确认</cub-button>
-      </div>
+      </view>
     </cub-menu-item>
   </cub-menu>
 </template>
@@ -275,7 +275,7 @@ app.use(MenuItem);
 
 ```html
 <template>
-  <div class="blank"></div>
+  <view class="blank"></view>
   <cub-menu direction="up">
     <cub-menu-item v-model="state.value1" :options="state.options1" />
     <cub-menu-item v-model="state.value2" @change="handleChange" :options="state.options2" />

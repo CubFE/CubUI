@@ -92,10 +92,10 @@ app.use(Countup);
     @scroll-end="scrollAniEnd"
   >
   </cub-countup>
-  <div class="btnBtn">
+  <view class="btnBtn">
     <cub-button type="danger" @click="startRole" :disabled="startFlag"> 中奖 </cub-button>
     <cub-button type="danger" @click="startRole2" :disabled="startFlag"> 不中奖 </cub-button>
-  </div>
+  </view>
 </template>
 <script>
   import { ref } from 'vue';

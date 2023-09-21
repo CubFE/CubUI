@@ -265,7 +265,7 @@ app.use(Range);
   <cub-cell :style="{padding: '40px 18px'}">
     <cub-range v-model="value" @change="onChange">
       <template #button>
-        <div class="custom-button">{{ value }}</div>
+        <view class="custom-button">{{ value }}</view>
       </template>
     </cub-range>
   </cub-cell>
@@ -294,11 +294,11 @@ app.use(Range);
 
 ```html
 <style>
-  .vertical_div {
+  .vertical_view {
     height: 180px;
     padding: 10px;
   }
-  .div {
+  .view {
     width: 150px;
   }
   .cell {
@@ -306,13 +306,13 @@ app.use(Range);
   }
 </style>
 <template>
-  <cub-cell class="vertical_div">
-    <div class="div">
+  <cub-cell class="vertical_view">
+    <view class="view">
       <cub-range v-model="value10" @change="onChange" :vertical="true"></cub-range>
-    </div>
-    <div class="div">
+    </view>
+    <view class="view">
       <cub-range range v-model="value11" @change="onChange" :vertical="true"></cub-range>
-    </div>
+    </view>
   </cub-cell>
 </template>
 
@@ -341,11 +341,11 @@ app.use(Range);
 
 ```html
 <style>
-  .vertical_div {
+  .vertical_view {
     height: 180px;
     padding: 10px;
   }
-  .div {
+  .view {
     width: 150px;
   }
   .cell {
@@ -353,18 +353,18 @@ app.use(Range);
   }
 </style>
 <template>
-  <div>
+  <view>
     <cub-cell class="cell">
       <cub-range v-model="value12" @change="onChange" :marks="marks" :hiddenRange="true"></cub-range>
     </cub-cell>
     <cub-cell class="cell">
       <cub-range range v-model="value13" @change="onChange" :marks="marks" :hiddenRange="true"></cub-range>
     </cub-cell>
-    <cub-cell class="vertical_div">
-      <div class="div">
+    <cub-cell class="vertical_view">
+      <view class="view">
         <cub-range v-model="value14" @change="onChange" :vertical="true" :marks="marks" :hiddenRange="true"></cub-range>
-      </div>
-      <div class="div">
+      </view>
+      <view class="view">
         <cub-range
           range
           v-model="value15"
@@ -373,9 +373,9 @@ app.use(Range);
           :marks="marks"
           :hiddenRange="true"
         ></cub-range>
-      </div>
+      </view>
     </cub-cell>
-  </div>
+  </view>
 </template>
 
 <script lang="ts">

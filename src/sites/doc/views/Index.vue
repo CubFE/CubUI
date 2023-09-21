@@ -9,7 +9,7 @@
         </div>
       </div>
       <div class="doc-content-document isComponent">
-        <!-- <div class="doc-content-tabs">
+        <div class="doc-content-tabs">
           <div
             class="tab-item"
             :class="{ cur: data.curKey === item.key }"
@@ -18,7 +18,7 @@
             @click="handleTabs(item.key)"
             >{{ item.text }}</div
           >
-        </div> -->
+        </div>
         <router-view />
       </div>
       <DocDemoPreview :url="data.demoUrl"></DocDemoPreview>

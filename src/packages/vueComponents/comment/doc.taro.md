@@ -96,10 +96,10 @@ app.use(Comment);
     </template>
 
     <template #comment-shop-reply>
-      <div class="cub-comment-shop">
+      <view class="cub-comment-shop">
         <span style="display:inline-block">京东美妆国际：</span
         >尊敬的客户您好，非常抱歉给您带来不愉快的购物体验，关于过敏，什么成分都不存在个别性和普遍性。
-      </div>
+      </view>
     </template>
   </cub-comment>
 </template>

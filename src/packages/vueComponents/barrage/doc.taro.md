@@ -21,9 +21,9 @@ app.use(Barrage);
 ```html
 <template>
   <cub-barrage ref="danmu" :danmu="list"></cub-barrage>
-  <div class="test">
+  <view class="test">
     <button @click="addDanmu" class="add cub-button--primary">随机添加</button>
-  </div>
+  </view>
 </template>
 <script>
   import { ref } from 'vue';

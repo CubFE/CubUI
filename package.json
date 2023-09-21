@@ -1,6 +1,6 @@
 {
   "name": "@cubfe/cubui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "轻量级移动端 Vue2、Vue3 组件库",
   "main": "dist/cubui.umd.js",
   "module": "dist/cubui.es.js",

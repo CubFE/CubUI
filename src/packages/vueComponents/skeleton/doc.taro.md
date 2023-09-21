@@ -68,10 +68,10 @@ app.use(Skeleton);
 
 ```html
 <template>
-  <div class="pic-compose">
+  <view class="pic-compose">
     <cub-skeleton width="250px" height="15px" title animated row="3" class="item"> </cub-skeleton>
     <cub-skeleton width="250px" height="15px" title animated row="3" class="item"> </cub-skeleton>
-  </div>
+  </view>
 </template>
 ```
 
@@ -95,24 +95,24 @@ app.use(Skeleton);
 
 ```html
 <template>
-  <div class="content">
+  <view class="content">
     <cub-switch v-model="checked" />
     <cub-skeleton width="250px" height="15px" title animated avatar row="3" :loading="!checked">
-      <div class="container">
+      <view class="container">
         <cub-avatar size="50">
           <img
             src="https://img14.360buyimg.com/imagetools/jfs/t1/167902/2/8762/791358/603742d7E9b4275e3/e09d8f9a8bf4c0ef.png"
           />
         </cub-avatar>
-        <div class="right-content">
-          <div class="title">cubui</div>
-          <div class="desc"
-            >一套轻量级移动端Vue组库，提供丰富的基础组件和业务组件，帮助开发者快速搭建移动应用。</div
+        <view class="right-content">
+          <view class="title">cubui</view>
+          <view class="desc"
+            >一套轻量级移动端Vue组库，提供丰富的基础组件和业务组件，帮助开发者快速搭建移动应用。</view
           >
-        </div>
-      </div>
+        </view>
+      </view>
     </cub-skeleton>
-  </div>
+  </view>
 </template>
 
 <script lang="ts">

@@ -1,506 +1,347 @@
 <template>
   <ul class="icon-demo">
-    <!-- <li>
-      <Add />
-      <span>Add</span>
-    </li>
-    <li>
-      <Addfollow />
-      <span>Addfollow</span>
-    </li>
-    <li>
-      <ArrowDown />
-      <span>ArrowDown</span>
-    </li>
-    <li>
-      <Under />
-      <span>Under</span>
-    </li>
-    <li>
-      <ArrowRight />
-      <span>ArrowRight</span>
-    </li>
-    <li>
-      <ArrowRight2 />
-      <span>ArrowRight2</span>
-    </li>
-    <li>
-      <ArrowUp />
-      <span>ArrowUp</span>
-    </li>
-    <li>
-      <Up />
-      <span>Up</span>
-    </li>
-    <li>
-      <Ask />
-      <span>Ask</span>
-    </li>
-    <li>
-      <Ask2 />
-      <span>Ask2</span>
-    </li>
-    <li>
-      <Cart />
-      <span>Cart</span>
-    </li>
-    <li>
-      <Cart2 />
-      <span>Cart2</span>
-    </li>
-    <li>
-      <Category />
-      <span>Category</span>
-    </li>
-    <li>
-      <CheckChecked />
-      <span>CheckChecked</span>
-    </li>
-    <li>
-      <CheckDisabled />
-      <span>CheckDisabled</span>
-    </li>
-    <li>
-      <CheckNormal />
-      <span>CheckNormal</span>
-    </li>
-    <li>
-      <Check />
-      <span>Check</span>
-    </li>
-    <li>
-      <Checked />
-      <span>Checked</span>
-    </li>
-    <li>
-      <Check />
-      <span>Check</span>
-    </li>
-    <li>
-      <CloseCircle />
-      <span>CloseCircle</span>
-    </li>
-    <li>
-      <Clock />
-      <span>Clock</span>
-    </li>
-    <li>
-      <CloseLittle />
-      <span>CloseLittle</span>
-    </li>
-    <li>
-      <Close />
-      <span>Close</span>
-    </li>
-    <li>
-      <Comment />
-      <span>Comment</span>
-    </li>
-    <li>
-      <Date />
-      <span>Date</span>
-    </li>
-    <li>
-      <Trash />
-      <span>Trash</span>
-    </li>
-    <li>
-      <Del2 />
-      <span>Del2</span>
-    </li>
-    <li>
-      <Dongdong />
-      <span>Dongdong</span>
-    </li>
-    <li>
-      <DouArrowUp />
-      <span>DouArrowUp</span>
-    </li>
-    <li>
-      <DownArrow />
-      <span>DownArrow</span>
-    </li>
-    <li>
-      <Download />
-      <span>Download</span>
-    </li>
-    <li>
-      <Dshop />
-      <span>Dshop</span>
-    </li>
-    <li>
-      <Edit />
-      <span>Edit</span>
-    </li>
-    <li>
-      <Eye />
-      <span>Eye</span>
-    </li>
-    <li>
-      <Good />
-      <span>Good</span>
-    </li>
-    <li>
-      <Failure />
-      <span>Failure</span>
-    </li>
-    <li>
-      <Find />
-      <span>Find</span>
-    </li>
-    <li>
-      <Follow />
-      <span>Follow</span>
-    </li>
-    <li>
-      <Footprint />
-      <span>Footprint</span>
-    </li>
-    <li>
-      <Github />
-      <span>Github</span>
-    </li>
-    <li>
-      <HeartFillN />
-      <span>HeartFillN</span>
-    </li>
-    <li>
-      <HeartFill />
-      <span>HeartFill</span>
-    </li>
-    <li>
-      <HeartFill1 />
-      <span>HeartFill1</span>
-    </li>
-    <li>
-      <HeartFill2 />
-      <span>HeartFill2</span>
-    </li>
-    <li>
-      <HeartFill3 />
-      <span>HeartFill3</span>
-    </li>
-    <li>
-      <HeartN />
-      <span>HeartN</span>
-    </li>
-    <li>
-      <Heart />
-      <span>Heart</span>
-    </li>
-    <li>
-      <Heart />
-      <span>Heart</span>
-    </li>
-    <li>
-      <Heart2 />
-      <span>Heart2</span>
-    </li>
-    <li>
-      <Home />
-      <span>Home</span>
-    </li>
-    <li>
-      <HorizontalN />
-      <span>HorizontalN</span>
-    </li>
-    <li>
-      <Horizontal />
-      <span>Horizontal</span>
-    </li>
-    <li>
-      <ImageError />
-      <span>ImageError</span>
-    </li>
-    <li>
-      <Image />
-      <span>Image</span>
-    </li>
-    <li>
-      <Issue />
-      <span>Issue</span>
-    </li>
-    <li>
-      <Jd />
-      <span>Jd</span>
-    </li>
-    <li>
-      <Jdl />
-      <span>Jdl</span>
-    </li>
-    <li>
-      <Jimi40 />
-      <span>Jimi40</span>
-    </li>
-    <li>
-      <Left />
-      <span>Left</span>
-    </li>
-    <li>
-      <Link />
-      <span>Link</span>
-    </li>
-    <li class="inside">
-      <Loading name="loading" />
-      <span>Loading</span>
-    </li>
-    <li>
-      <Loading1 />
-      <span>Loading1</span>
-    </li>
-    <li>
-      <Location />
-      <span>Location</span>
-    </li>
-    <li>
-      <Location />
-      <span>Location</span>
-    </li>
-    <li>
-      <Locationg3 />
-      <span>Locationg3</span>
-    </li>
-    <li>
-      <Lower />
-      <span>Lower</span>
-    </li>
-    <li>
-      <Marshalling />
-      <span>Marshalling</span>
-    </li>
-    <li>
-      <MaskClose />
-      <span>MaskClose</span>
-    </li>
-    <li>
-      <Message />
-      <span>Message</span>
-    </li>
-    <li>
-      <Microphone />
-      <span>Microphone</span>
-    </li>
-    <li>
-      <Minus />
-      <span>Minus</span>
-    </li>
-    <li>
-      <MoreS />
-      <span>MoreS</span>
-    </li>
-    <li>
-      <MoreX />
-      <span>MoreX</span>
-    </li>
-    <li>
-      <More />
-      <span>More</span>
-    </li>
-    <li>
-      <Me />
-      <span>Me</span>
-    </li>
-    <li>
-      <My2 />
-      <span>My2</span>
-    </li>
-    <li>
-      <Notice />
-      <span>Notice</span>
-    </li>
-    <li>
-      <Order />
-      <span>Order</span>
-    </li>
-    <li>
-      <People />
-      <span>People</span>
-    </li>
-    <li>
-      <Photograph />
-      <span>Photograph</span>
-    </li>
-    <li>
-      <PlayCircleFill />
-      <span>PlayCircleFill</span>
-    </li>
-    <li>
-      <PlayDoubleBack />
-      <span>PlayDoubleBack</span>
-    </li>
-    <li>
-      <PlayDoubleForward />
-      <span>PlayDoubleForward</span>
-    </li>
-    <li>
-      <PlayStart />
-      <span>PlayStart</span>
-    </li>
-    <li>
-      <PlayStop />
-      <span>PlayStop</span>
-    </li>
-    <li>
-      <Plus />
-      <span>Plus</span>
-    </li>
-    <li>
-      <PoweroffCircleFill />
-      <span>PoweroffCircleFill</span>
-    </li>
-    <li>
-      <RectDown />
-      <span>RectDown</span>
-    </li>
-    <li>
-      <RectLeft />
-      <span>RectLeft</span>
-    </li>
-    <li>
-      <RectRight />
-      <span>RectRight</span>
-    </li>
-    <li>
-      <RectUp />
-      <span>RectUp</span>
-    </li>
-    <li>
-      <Refresh />
-      <span>Refresh</span>
-    </li>
-    <li>
-      <Refresh2 />
-      <span>Refresh2</span>
-    </li>
-    <li>
-      <Retweet />
-      <span>Retweet</span>
-    </li>
-    <li>
-      <Right />
-      <span>Right</span>
-    </li>
-    <li>
-      <SFollow />
-      <span>SFollow</span>
-    </li>
-    <li>
-      <Scan />
-      <span>Scan</span>
-    </li>
-    <li>
-      <Scan2 />
-      <span>Scan2</span>
-    </li>
-    <li>
-      <ScreenLittle />
-      <span>ScreenLittle</span>
-    </li>
-    <li>
-      <Search />
-      <span>Search</span>
-    </li>
-    <li>
-      <Search2 />
-      <span>Search2</span>
-    </li>
-    <li>
-      <Service />
-      <span>Service</span>
-    </li>
-    <li>
-      <Setting />
-      <span>Setting</span>
-    </li>
-    <li>
-      <ShareN />
-      <span>ShareN</span>
-    </li>
-    <li>
-      <Share />
-      <span>Share</span>
-    </li>
-    <li>
-      <Share1 />
-      <span>Share1</span>
-    </li>
-    <li>
-      <Shop />
-      <span>Shop</span>
-    </li>
-    <li>
-      <Shop3 />
-      <span>Shop3</span>
-    </li>
-    <li>
-      <StarFillN />
-      <span>StarFillN</span>
-    </li>
-    <li>
-      <StarFill />
-      <span>StarFill</span>
-    </li>
-    <li>
-      <StarFill1 />
-      <span>StarFill1</span>
-    </li>
-    <li>
-      <StarFill2 />
-      <span>StarFill2</span>
-    </li>
-    <li>
-      <StarN />
-      <span>StarN</span>
-    </li>
-    <li>
-      <Star />
-      <span>Star</span>
-    </li>
-    <li>
-      <Star1 />
-      <span>Star1</span>
-    </li>
-    <li>
-      <Star11 />
-      <span>Star11</span>
-    </li>
-    <li>
-      <Star2 />
-      <span>Star2</span>
-    </li>
-    <li>
-      <Success />
-      <span>Success</span>
-    </li>
-    <li>
-      <Tips />
-      <span>Tips</span>
-    </li>
-    <li>
-      <Top />
-      <span>Top</span>
-    </li>
-    <li>
-      <TriangleDown />
-      <span>TriangleDown</span>
-    </li>
-    <li>
-      <TriangleUp />
-      <span>TriangleUp</span>
-    </li>
-    <li>
-      <Uploader />
-      <span>Uploader</span>
-    </li>
-    <li>
-      <Voice />
-      <span>Voice</span>
-    </li> -->
+    <li><Accountbook/><span>Accountbook</span></li>
+    <li><Add/><span>Add</span></li>
+    <li><Addfollow/><span>Addfollow</span></li>
+    <li><Address/><span>Address</span></li>
+    <li><Addressbook/><span>Addressbook</span></li>
+    <li><Anger/><span>Anger</span></li>
+    <li><Apps/><span>Apps</span></li>
+    <li><Ask/><span>Ask</span></li>
+    <li><Bankcard/><span>Bankcard</span></li>
+    <li><Barchart/><span>Barchart</span></li>
+    <li><Bill/><span>Bill</span></li>
+    <li><Bus/><span>Bus</span></li>
+    <li><Buscode/><span>Buscode</span></li>
+    <li><Calculator/><span>Calculator</span></li>
+    <li><Calendar/><span>Calendar</span></li>
+    <li><Card/><span>Card</span></li>
+    <li><Cart/><span>Cart</span></li>
+    <li><Category/><span>Category</span></li>
+    <li><Chat/><span>Chat</span></li>
+    <li><ChatAdd/><span>ChatAdd</span></li>
+    <li><ChatRight/><span>ChatRight</span></li>
+    <li><ChatWrong/><span>ChatWrong</span></li>
+    <li><Check/><span>Check</span></li>
+    <li><CheckChecked/><span>CheckChecked</span></li>
+    <li><CheckDisabled/><span>CheckDisabled</span></li>
+    <li><Checked/><span>Checked</span></li>
+    <li><Checklist/><span>Checklist</span></li>
+    <li><CheckNormal/><span>CheckNormal</span></li>
+    <li><Classification/><span>Classification</span></li>
+    <li><Clock/><span>Clock</span></li>
+    <li><Close/><span>Close</span></li>
+    <li><CloseCircle/><span>CloseCircle</span></li>
+    <li><CloseVolume/><span>CloseVolume</span></li>
+    <li><Coin/><span>Coin</span></li>
+    <li><Collect/><span>Collect</span></li>
+    <li><Collection/><span>Collection</span></li>
+    <li><Comment/><span>Comment</span></li>
+    <li><Compass/><span>Compass</span></li>
+    <li><Content/><span>Content</span></li>
+    <li><Coupon/><span>Coupon</span></li>
+    <li><Details/><span>Details</span></li>
+    <li><DouArrowUp/><span>DouArrowUp</span></li>
+    <li><Douyin/><span>Douyin</span></li>
+    <li><Douyin1/><span>Douyin1</span></li>
+    <li><Download/><span>Download</span></li>
+    <li><Download1/><span>Download1</span></li>
+    <li><DownS/><span>DownS</span></li>
+    <li><Edit/><span>Edit</span></li>
+    <li><Express/><span>Express</span></li>
+    <li><Eye/><span>Eye</span></li>
+    <li><Facerecognition/><span>Facerecognition</span></li>
+    <li><Failure/><span>Failure</span></li>
+    <li><Fillin/><span>Fillin</span></li>
+    <li><Folder/><span>Folder</span></li>
+    <li><Footprint/><span>Footprint</span></li>
+    <li><FriendDelete/><span>FriendDelete</span></li>
+    <li><FriendDelete2/><span>FriendDelete2</span></li>
+    <li><FriendsAdd/><span>FriendsAdd</span></li>
+    <li><FriendSettings/><span>FriendSettings</span></li>
+    <li><Gift/><span>Gift</span></li>
+    <li><Gitee/><span>Gitee</span></li>
+    <li><Github/><span>Github</span></li>
+    <li><Good/><span>Good</span></li>
+    <li><Google/><span>Google</span></li>
+    <li><Heart/><span>Heart</span></li>
+    <li><HeartFill/><span>HeartFill</span></li>
+    <li><Home/><span>Home</span></li>
+    <li><Horizontal/><span>Horizontal</span></li>
+    <li><Huititle/><span>Huititle</span></li>
+    <li><Image/><span>Image</span></li>
+    <li><ImageError/><span>ImageError</span></li>
+    <li><InformationAdd/><span>InformationAdd</span></li>
+    <li><Issue/><span>Issue</span></li>
+    <li><Jingdong/><span>Jingdong</span></li>
+    <li><JoySmile/><span>JoySmile</span></li>
+    <li><Key/><span>Key</span></li>
+    <li><Kuaishou/><span>Kuaishou</span></li>
+    <li><Kuaishou1/><span>Kuaishou1</span></li>
+    <li><Left/><span>Left</span></li>
+    <li><Link/><span>Link</span></li>
+    <li><Live/><span>Live</span></li>
+    <li><Loading/><span>Loading</span></li>
+    <li><Loading1/><span>Loading1</span></li>
+    <li><Location/><span>Location</span></li>
+    <li><Location1/><span>Location1</span></li>
+    <li><Lock/><span>Lock</span></li>
+    <li><Loop/><span>Loop</span></li>
+    <li><Lower/><span>Lower</span></li>
+    <li><Mail/><span>Mail</span></li>
+    <li><Mark/><span>Mark</span></li>
+    <li><MaskClose/><span>MaskClose</span></li>
+    <li><Me/><span>Me</span></li>
+    <li><Message/><span>Message</span></li>
+    <li><Minus/><span>Minus</span></li>
+    <li><MinusCircle/><span>MinusCircle</span></li>
+    <li><More/><span>More</span></li>
+    <li><MoreS/><span>MoreS</span></li>
+    <li><MoreX/><span>MoreX</span></li>
+    <li><Movie/><span>Movie</span></li>
+    <li><Network/><span>Network</span></li>
+    <li><No/><span>No</span></li>
+    <li><NoEye/><span>NoEye</span></li>
+    <li><Notice/><span>Notice</span></li>
+    <li><Openmail/><span>Openmail</span></li>
+    <li><Order/><span>Order</span></li>
+    <li><Pay/><span>Pay</span></li>
+    <li><PayCollect/><span>PayCollect</span></li>
+    <li><Payment/><span>Payment</span></li>
+    <li><Pepole/><span>Pepole</span></li>
+    <li><Personal/><span>Personal</span></li>
+    <li><Photograph/><span>Photograph</span></li>
+    <li><Piechart1/><span>Piechart1</span></li>
+    <li><Piechart2/><span>Piechart2</span></li>
+    <li><Play/><span>Play</span></li>
+    <li><PlayCircleFill/><span>PlayCircleFill</span></li>
+    <li><PlayDoubleBack/><span>PlayDoubleBack</span></li>
+    <li><PlayDoubleForward/><span>PlayDoubleForward</span></li>
+    <li><PlayStart/><span>PlayStart</span></li>
+    <li><PlayStop/><span>PlayStop</span></li>
+    <li><Plus/><span>Plus</span></li>
+    <li><PoweroffCircleFill/><span>PoweroffCircleFill</span></li>
+    <li><Query/><span>Query</span></li>
+    <li><Redpacket/><span>Redpacket</span></li>
+    <li><Refresh/><span>Refresh</span></li>
+    <li><Refresh2/><span>Refresh2</span></li>
+    <li><Retweet/><span>Retweet</span></li>
+    <li><Right/><span>Right</span></li>
+    <li><Scan/><span>Scan</span></li>
+    <li><Scan2/><span>Scan2</span></li>
+    <li><ScreenLittle/><span>ScreenLittle</span></li>
+    <li><Search/><span>Search</span></li>
+    <li><Selected/><span>Selected</span></li>
+    <li><SelectedCircle/><span>SelectedCircle</span></li>
+    <li><Service/><span>Service</span></li>
+    <li><Setting/><span>Setting</span></li>
+    <li><Share/><span>Share</span></li>
+    <li><Shop/><span>Shop</span></li>
+    <li><Slice/><span>Slice</span></li>
+    <li><Smail/><span>Smail</span></li>
+    <li><Star/><span>Star</span></li>
+    <li><StarFill/><span>StarFill</span></li>
+    <li><Success/><span>Success</span></li>
+    <li><SystemPhonebook/><span>SystemPhonebook</span></li>
+    <li><Taobao/><span>Taobao</span></li>
+    <li><Target/><span>Target</span></li>
+    <li><Text/><span>Text</span></li>
+    <li><Textdeletion/><span>Textdeletion</span></li>
+    <li><Tips/><span>Tips</span></li>
+    <li><Tmall/><span>Tmall</span></li>
+    <li><Tmall1/><span>Tmall1</span></li>
+    <li><Top/><span>Top</span></li>
+    <li><Toutiao/><span>Toutiao</span></li>
+    <li><Trash/><span>Trash</span></li>
+    <li><Travel/><span>Travel</span></li>
+    <li><Type/><span>Type</span></li>
+    <li><Under/><span>Under</span></li>
+    <li><Up/><span>Up</span></li>
+    <li><Uploader/><span>Uploader</span></li>
+    <li><UpS/><span>UpS</span></li>
+    <li><Voice/><span>Voice</span></li>
+    <li><VoiceClose/><span>VoiceClose</span></li>
+    <li><Volume/><span>Volume</span></li>
+    <li><Wallet/><span>Wallet</span></li>
+    <li><Warn/><span>Warn</span></li>
+    <li><Weibo/><span>Weibo</span></li>
+    <li><Weixin/><span>Weixin</span></li>
+    <li><Zhifubao/><span>Zhifubao</span></li>
+    <li><Zoom/><span>Zoom</span></li>
+    <li><Zoomout/><span>Zoomout</span></li>
   </ul>
 </template>
 <script lang="ts" setup>
 import {
-  
+  Accountbook,
+  Add,
+  Addfollow,
+  Address,
+  Addressbook,
+  Anger,
+  Apps,
+  Ask,
+  Bankcard,
+  Barchart,
+  Bill,
+  Bus,
+  Buscode,
+  Calculator,
+  Calendar,
+  Card,
+  Cart,
+  Category,
+  Chat,
+  ChatAdd,
+  ChatRight,
+  ChatWrong,
+  Check,
+  CheckChecked,
+  CheckDisabled,
+  Checked,
+  Checklist,
+  CheckNormal,
+  Classification,
+  Clock,
+  Close,
+  CloseCircle,
+  CloseVolume,
+  Coin,
+  Collect,
+  Collection,
+  Comment,
+  Compass,
+  Content,
+  Coupon,
+  Details,
+  DouArrowUp,
+  Douyin,
+  Douyin1,
+  Download,
+  Download1,
+  DownS,
+  Edit,
+  Express,
+  Eye,
+  Facerecognition,
+  Failure,
+  Fillin,
+  Folder,
+  Footprint,
+  FriendDelete,
+  FriendDelete2,
+  FriendsAdd,
+  FriendSettings,
+  Gift,
+  Gitee,
+  Github,
+  Good,
+  Google,
+  Heart,
+  HeartFill,
+  Home,
+  Horizontal,
+  Huititle,
+  Image,
+  ImageError,
+  InformationAdd,
+  Issue,
+  Jingdong,
+  JoySmile,
+  Key,
+  Kuaishou,
+  Kuaishou1,
+  Left,
+  Link,
+  Live,
+  Loading,
+  Loading1,
+  Location,
+  Location1,
+  Lock,
+  Loop,
+  Lower,
+  Mail,
+  Mark,
+  MaskClose,
+  Me,
+  Message,
+  Minus,
+  MinusCircle,
+  More,
+  MoreS,
+  MoreX,
+  Movie,
+  Network,
+  No,
+  NoEye,
+  Notice,
+  Openmail,
+  Order,
+  Pay,
+  PayCollect,
+  Payment,
+  Pepole,
+  Personal,
+  Photograph,
+  Piechart1,
+  Piechart2,
+  Play,
+  PlayCircleFill,
+  PlayDoubleBack,
+  PlayDoubleForward,
+  PlayStart,
+  PlayStop,
+  Plus,
+  PoweroffCircleFill,
+  Query,
+  Redpacket,
+  Refresh,
+  Refresh2,
+  Retweet,
+  Right,
+  Scan,
+  Scan2,
+  ScreenLittle,
+  Search,
+  Selected,
+  SelectedCircle,
+  Service,
+  Setting,
+  Share,
+  Shop,
+  Slice,
+  Smail,
+  Star,
+  StarFill,
+  Success,
+  SystemPhonebook,
+  Taobao,
+  Target,
+  Text,
+  Textdeletion,
+  Tips,
+  Tmall,
+  Tmall1,
+  Top,
+  Toutiao,
+  Trash,
+  Travel,
+  Type,
+  Under,
+  Up,
+  Uploader,
+  UpS,
+  Voice,
+  VoiceClose,
+  Volume,
+  Wallet,
+  Warn,
+  Weibo,
+  Weixin,
+  Zhifubao,
+  Zoom,
+  Zoomout
 } from '@cubfe/icons-vue';
 </script>
 <style lang="scss">
@@ -511,10 +352,12 @@ import {
   border-left: 1px solid #dcdfe6;
   width: 901px;
   margin: 10px auto;
+
   li {
     &::before {
       content: none !important;
     }
+
     margin: 0 !important;
     padding: 0 !important;
     border-right: 1px solid #dcdfe6;
@@ -531,6 +374,7 @@ import {
       line-height: 12px;
       margin-top: 10px;
     }
+
     > svg {
       height: 20px;
       width: 20px;

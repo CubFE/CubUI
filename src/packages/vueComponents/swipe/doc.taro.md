@@ -151,14 +151,14 @@ const number = ref(0);
         <cub-button shape="square" style="height: 100%" type="danger">删除</cub-button>
       </template>
     </cub-swipe>
-    <div>
+    <view>
       <cub-swipe name="33">
         <cub-cell round-radius="0" title="左滑删除" />
         <template #right>
           <cub-button shape="square" style="height: 100%" type="danger">删除</cub-button>
         </template>
       </cub-swipe>
-    </div>
+    </view>
   </cub-swipe-group>
 </template>
 ```

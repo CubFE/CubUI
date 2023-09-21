@@ -28,7 +28,7 @@
     <div class="elevator-wrapper">
       <cub-elevator :index-list="temp" :height="260" @click-item="clickItem" @click-index="clickIndex">
         <template #default="slotProps">
-          <Jd width="12px"></Jd>
+          <Location width="12px"></Location>
           <span :style="{ marginLeft: '15px' }">{{ slotProps.item.name }}</span>
         </template>
       </cub-elevator>
@@ -41,7 +41,7 @@ import { computed, reactive, toRefs, defineComponent } from 'vue';
 import { createComponent } from '@/packages/utils/create';
 const { translate } = createComponent('elevator');
 import { useTranslate } from '@/sites/assets/util/useTranslate';
-import { Jd } from '@cubfe/icons-vue';
+import { Location } from '@cubfe/icons-vue';
 const initTranslate = () =>
   useTranslate({
     'zh-CN': {
@@ -139,7 +139,7 @@ const initTranslate = () =>
   });
 export default defineComponent({
   components: {
-    Jd
+    Location
   },
   setup() {
     initTranslate();

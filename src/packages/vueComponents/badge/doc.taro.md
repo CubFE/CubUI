@@ -20,7 +20,7 @@ app.use(Badge);
 
 ```html
 <template>
-  <div class="demo">
+  <view class="demo">
     <cub-badge :value="8">
       <cub-avatar shape="square"></cub-avatar>
     </cub-badge>
@@ -33,7 +33,7 @@ app.use(Badge);
     <cub-badge dot>
       <cub-avatar shape="square"></cub-avatar>
     </cub-badge>
-  </div>
+  </view>
 </template>
 
 <style>
@@ -54,7 +54,7 @@ app.use(Badge);
 
 ```html
 <template>
-  <div class="demo">
+  <view class="demo">
     <cub-badge :value="200" :max="9">
       <cub-avatar shape="square"></cub-avatar>
     </cub-badge>
@@ -64,7 +64,7 @@ app.use(Badge);
     <cub-badge :value="200" :max="99">
       <cub-avatar shape="square"></cub-avatar>
     </cub-badge>
-  </div>
+  </view>
 </template>
 
 <style>
@@ -85,7 +85,7 @@ app.use(Badge);
 
 ```html
 <template>
-  <div class="demo">
+  <view class="demo">
     <cub-badge :value="8" color="linear-gradient(315deg, rgba(73,143,242,1) 0%,rgba(73,101,242,1) 100%)">
       <cub-avatar shape="square"></cub-avatar>
     </cub-badge>
@@ -98,7 +98,7 @@ app.use(Badge);
     <cub-badge dot color="linear-gradient(315deg, rgba(73,143,242,1) 0%,rgba(73,101,242,1) 100%)">
       <cub-avatar shape="square"></cub-avatar>
     </cub-badge>
-  </div>
+  </view>
 </template>
 
 <style>
@@ -119,7 +119,7 @@ app.use(Badge);
 
 ```html
 <template>
-  <div class="demo">
+  <view class="demo">
     <cub-badge>
       <template #icon>
         <Check color="#ffffff" size="12px"></Check>
@@ -138,7 +138,7 @@ app.use(Badge);
       </template>
       <cub-avatar shape="square"></cub-avatar>
     </cub-badge>
-  </div>
+  </view>
 </template>
 
 <script setup>
@@ -164,7 +164,7 @@ import { Check, Link, Download } from '@cubfe/icons-vue-taro';
 
 ```html
 <template>
-  <div class="demo">
+  <view class="demo">
     <cub-badge :value="8" top="5" right="5">
       <cub-avatar shape="square"></cub-avatar>
     </cub-badge>
@@ -174,7 +174,7 @@ import { Check, Link, Download } from '@cubfe/icons-vue-taro';
     <cub-badge value="NEW">
       <cub-avatar shape="square"></cub-avatar>
     </cub-badge>
-  </div>
+  </view>
 </template>
 
 <style>
@@ -195,11 +195,11 @@ import { Check, Link, Download } from '@cubfe/icons-vue-taro';
 
 ```html
 <template>
-  <div class="demo">
+  <view class="demo">
     <cub-badge :value="8"> </cub-badge>
     <cub-badge :value="76"> </cub-badge>
     <cub-badge value="NEW"> </cub-badge>
-  </div>
+  </view>
 </template>
 
 <style>

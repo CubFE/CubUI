@@ -1163,7 +1163,7 @@
           "cName": "弹幕",
           "desc": "用于视频弹幕等展示",
           "sort": 2,
-          "show": false,
+          "show": true,
           "author": "Ymm0008"
         },
         {
@@ -1175,7 +1175,7 @@
           "cName": "签名",
           "desc": "签名组件",
           "sort": 3,
-          "show": false,
+          "show": true,
           "author": "guoxiaoxiao"
         },
         {
@@ -1186,7 +1186,7 @@
           "cName": "配送时间",
           "desc": "配送时间",
           "sort": 4,
-          "show": false,
+          "show": true,
           "author": "szg2008"
         },
         {
@@ -1221,7 +1221,7 @@
           "cName": "商品规格选择",
           "desc": "商品规格选择",
           "sort": 1,
-          "show": false,
+          "show": true,
           "author": "yangxiaolu3"
         },
         {
@@ -1253,7 +1253,7 @@
           "type": "component",
           "cName": "地址列表",
           "desc": "展示收货地址列表",
-          "show": false,
+          "show": true,
           "author": "yushuang24",
           "taro": true
         },
@@ -1295,7 +1295,7 @@
           "cType": "特色组件",
           "cName": "发票",
           "desc": "发票",
-          "show": false,
+          "show": true,
           "tarodoc": false,
           "type": "component",
           "author": "ailululu",

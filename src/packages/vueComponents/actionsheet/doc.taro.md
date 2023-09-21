@@ -22,7 +22,7 @@ app.use(ActionSheet);
 <template>
   <cub-cell :show-icon="true" :isLink="true" @click="switchActionSheet('isVisible1')">
     <span><label>基础用法</label></span>
-    <div v-html="state.val"></div>
+    <view v-html="state.val"></view>
   </cub-cell>
   <!-- demo 基础用法 -->
   <cub-action-sheet v-model:visible="state.isVisible1" :menu-items="menuItemsOne" @choose="chooseItem">
@@ -74,7 +74,7 @@ app.use(ActionSheet);
 <template>
   <cub-cell :show-icon="true" :isLink="true" @click="switchActionSheet('isVisible')">
     <span><label>展示取消按钮</label></span>
-    <div v-html="state.val"></div>
+    <view v-html="state.val"></view>
   </cub-cell>
   <!-- demo 展示取消按钮 -->
   <cub-action-sheet v-model:visible="state.isVisible" :menu-items="menuItems" cancel-txt="取消" @choose="chooseItem">
@@ -126,7 +126,7 @@ app.use(ActionSheet);
 <template>
   <cub-cell :show-icon="true" :isLink="true" @click="switchActionSheet('isVisible')">
     <span><label>展示描述信息</label></span>
-    <div v-html="state.val"></div>
+    <view v-html="state.val"></view>
   </cub-cell>
   <!-- demo 展示描述信息 -->
   <cub-action-sheet
@@ -185,7 +185,7 @@ app.use(ActionSheet);
 <template>
   <cub-cell :show-icon="true" :isLink="true" @click="switchActionSheet('isVisible')">
     <span><label>选项状态</label></span>
-    <div v-html="state.val"></div>
+    <view v-html="state.val"></view>
   </cub-cell>
   <!-- demo 选项状态 -->
   <cub-action-sheet
@@ -243,7 +243,7 @@ app.use(ActionSheet);
     <span><label>自定义内容</label></span>
   </cub-cell>
   <cub-action-sheet v-model:visible="state.isVisible" title="标题">
-    <div class="custom-content">自定义内容</div>
+    <view class="custom-content">自定义内容</view>
   </cub-action-sheet>
 </template>
 <script>

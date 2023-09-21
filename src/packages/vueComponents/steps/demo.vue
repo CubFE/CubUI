@@ -46,7 +46,7 @@
         </cub-step>
         <cub-step :title="translate('progress')">
           <template #icon>
-            <People />
+            <Pepole />
           </template>
         </cub-step>
         <cub-step :title="translate('start')">
@@ -88,7 +88,7 @@
 import { reactive, toRefs, defineComponent } from 'vue';
 import { createComponent } from '@/packages/utils/create';
 import { useTranslate } from '@/sites/assets/util/useTranslate';
-import { Service, People, Location } from '@cubfe/icons-vue';
+import { Service, Pepole, Location } from '@cubfe/icons-vue';
 
 const { translate } = createComponent('steps');
 const initTranslate = () =>
@@ -138,7 +138,7 @@ const initTranslate = () =>
     }
   });
 export default defineComponent({
-  components: { Service, People, Location },
+  components: { Service, Pepole, Location },
   props: {},
   setup() {
     initTranslate();

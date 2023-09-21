@@ -24,16 +24,16 @@ app.use();
 
 ```html
 <template>
-  <div class="demo">
+  <view class="demo">
     <h2>基础用法</h2>
     <cub-cell>
       <cub-list :height="50" :listData="count" @scroll-bottom="handleScroll">
         <template v-slot="{ item, index }">
-          <div class="list-item"> {{ index }} </div>
+          <view class="list-item"> {{ index }} </view>
         </template>
       </cub-list>
     </cub-cell>
-  </div>
+  </view>
 </template>
 <script lang="ts">
   import { onMounted, reactive, toRefs } from 'vue';

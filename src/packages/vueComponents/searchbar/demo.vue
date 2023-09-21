@@ -13,7 +13,7 @@
     <h2>{{ translate('basic3') }}</h2>
     <cub-searchbar v-model="searchValue2" @click-left-icon="clickLeftIcon">
       <template #leftin>
-        <Search2 />
+        <Search />
       </template>
     </cub-searchbar>
 
@@ -43,7 +43,7 @@
         <Left @click="clickLeft" />
       </template>
       <template #leftin>
-        <Search2 />
+        <Search />
       </template>
       <template #rightin>
         <Photograph />
@@ -59,7 +59,7 @@
 import { toRefs, reactive, defineComponent } from 'vue';
 import { createComponent } from '@/packages/utils/create';
 import { showToast } from '../toast';
-import { Search2, Left, Photograph, Message } from '@cubfe/icons-vue';
+import { Search, Left, Photograph, Message } from '@cubfe/icons-vue';
 const { translate } = createComponent('searchbar');
 import { useTranslate } from '@/sites/assets/util/useTranslate';
 const initTranslate = () =>
@@ -91,7 +91,7 @@ const initTranslate = () =>
     }
   });
 export default defineComponent({
-  components: { Search2, Left, Photograph, Message },
+  components: { Search, Left, Photograph, Message },
   props: {},
   setup() {
     const icon =

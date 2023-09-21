@@ -74,9 +74,9 @@ const tabValue = ref(0);
 ```vue
 <template>
   <cub-empty image="error" description="加载失败">
-    <div style="margin-top: 10px">
+    <view style="margin-top: 10px">
       <cub-button icon="refresh" type="primary">重试</cub-button>
-    </div>
+    </view>
   </cub-empty>
 </template>
 ```

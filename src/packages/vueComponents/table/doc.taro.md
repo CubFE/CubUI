@@ -297,7 +297,7 @@ app.use(Table);
   <cub-table :columns="columns" :data="data"></cub-table>
   <cub-table :columns="columns3" :data="data3">
     <template #nodata>
-      <div class="no-data"> 这里是自定义展示 </div>
+      <view class="no-data"> 这里是自定义展示 </view>
     </template>
   </cub-table>
 </template>

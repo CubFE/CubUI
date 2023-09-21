@@ -62,7 +62,7 @@ app.use(CellGroup);
 ```html
 <template>
   <cub-cell>
-    <div>自定义内容</div>
+    <view>自定义内容</view>
   </cub-cell>
 </template>
 ```

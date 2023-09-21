@@ -337,9 +337,9 @@ app.use(Address);
       <HeartFill style="margin-right:8px" color="#f00"></HeartFill>
     </template>
     <template #bottom>
-      <div class="cub-address-custom-buttom">
-        <div class="btn">自定义按钮</div>
-      </div>
+      <view class="cub-address-custom-buttom">
+        <view class="btn">自定义按钮</view>
+      </view>
     </template>
   </cub-address>
 </template>

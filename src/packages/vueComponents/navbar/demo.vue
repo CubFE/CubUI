@@ -6,7 +6,7 @@
         <div>{{ translate('back') }}</div>
       </template>
       <template #right>
-        <ShareN width="16px"></ShareN>
+        <Share width="16px"></Share>
       </template>
     </cub-navbar>
 
@@ -29,7 +29,7 @@
       :desc="translate('desc2')"
     >
       <template #title-icon>
-        <Cart2 width="16px"></Cart2>
+        <Cart width="16px"></Cart>
       </template>
       <template #right>
         <MoreX class="right" width="16px"></MoreX>
@@ -60,7 +60,7 @@
         </cub-tabs>
       </template>
       <template #right>
-        <HorizontalN class="right" width="16px"></HorizontalN>
+        <Horizontal class="right" width="16px"></Horizontal>
       </template>
     </cub-navbar>
   </div>
@@ -71,7 +71,7 @@ import { ref, defineComponent } from 'vue';
 import { createComponent } from '@/packages/utils/create';
 const { translate } = createComponent('navbar');
 import { useTranslate } from '@/sites/assets/util/useTranslate';
-import { ShareN, Cart2, MoreX, HorizontalN } from '@cubfe/icons-vue';
+import { Share, Cart, MoreX, Horizontal } from '@cubfe/icons-vue';
 const initTranslate = () =>
   useTranslate({
     'zh-CN': {
@@ -104,7 +104,7 @@ const initTranslate = () =>
     }
   });
 export default defineComponent({
-  components: { ShareN, Cart2, MoreX, HorizontalN },
+  components: { Share, Cart, MoreX, Horizontal },
   setup() {
     initTranslate();
     const tab1value = ref(0);

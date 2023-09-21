@@ -139,9 +139,9 @@ app.use(Overlay);
 <template>
   <cub-button type="success" @click="show = true">嵌套内容</cub-button>
   <cub-overlay v-model:visible="show">
-    <div class="wrapper">
-      <div class="content">这里是正文</div>
-    </div>
+    <view class="wrapper">
+      <view class="content">这里是正文</view>
+    </view>
   </cub-overlay>
 </template>
 <script lang="ts">
@@ -189,9 +189,9 @@ app.use(Overlay);
 <template>
   <cub-button type="primary" @click="show = true">点击遮罩不关闭</cub-button>
   <cub-overlay v-model:visible="show" :close-on-click-overlay="false">
-    <div class="wrapper">
-      <div class="content" @click.stop="show = false;">close</div>
-    </div>
+    <view class="wrapper">
+      <view class="content" @click.stop="show = false;">close</view>
+    </view>
   </cub-overlay>
 </template>
 <script lang="ts">

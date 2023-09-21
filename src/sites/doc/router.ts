@@ -3,9 +3,9 @@ import Index from './views/Index.vue';
 
 /* doc.md */
 const pagesRouter: Array<RouteRecordRaw> = [];
-const modulesPage = import.meta.glob('/src/packages/__VUE/**/doc.md');
+const modulesPage = import.meta.glob('/src/packages/vueComponents/**/doc.md');
 for (const path in modulesPage) {
-  const name = (/packages\/__VUE\/(.*)\/doc.md/.exec(path) as any[])[1];
+  const name = (/packages\/vueComponents\/(.*)\/doc.md/.exec(path) as any[])[1];
   pagesRouter.push({
     path: '/zh-CN/component/' + name,
     component: modulesPage[path]
@@ -14,9 +14,9 @@ for (const path in modulesPage) {
 
 /* doc.en-US.md */
 const pagesEnRouter: Array<RouteRecordRaw> = [];
-const modulesEnPage = import.meta.glob('/src/packages/__VUE/**/doc.en-US.md');
+const modulesEnPage = import.meta.glob('/src/packages/vueComponents/**/doc.en-US.md');
 for (const path in modulesEnPage) {
-  const name = (/packages\/__VUE\/(.*)\/doc.en-US.md/.exec(path) as any[])[1];
+  const name = (/packages\/vueComponents\/(.*)\/doc.en-US.md/.exec(path) as any[])[1];
   pagesEnRouter.push({
     path: '/en-US/component/' + name,
     component: modulesEnPage[path]
@@ -24,9 +24,9 @@ for (const path in modulesEnPage) {
 }
 
 /* doc.taro.md */
-const modulesPageTaro = import.meta.glob('/src/packages/__VUE/**/*.taro.md');
+const modulesPageTaro = import.meta.glob('/src/packages/vueComponents/**/*.taro.md');
 for (const path in modulesPageTaro) {
-  const name = (/packages\/__VUE\/(.*)\/doc.taro.md/.exec(path) as any[])[1];
+  const name = (/packages\/vueComponents\/(.*)\/doc.taro.md/.exec(path) as any[])[1];
   pagesRouter.push({
     path: `/zh-CN/component/${name}-taro`,
     component: modulesPageTaro[path]

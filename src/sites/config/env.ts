@@ -30,8 +30,8 @@ switch (import.meta.env.MODE) {
      * 线上环境 => npm run build
      */
     config.isPrd = true;
-    config.baseUrl = 'https://cubui.jd.com';
-    config.themeUrl = 'https://cubui.jd.com/theme/source';
+    config.baseUrl = 'https://cubui.kakusoft.com';
+    config.themeUrl = 'https://cubui.kakusoft.com/theme/source';
     break;
 }
 export default config;

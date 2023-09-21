@@ -11,13 +11,13 @@ config.nav.map((item) => {
   item.packages.forEach((element) => {
     let { name, type, exclude } = element;
     if (name !== 'Icon') {
-      importStr += `import ${name} from './__VUE/${name.toLowerCase()}/index.vue';\n`;
+      importStr += `import ${name} from './vueComponents/${name.toLowerCase()}/index.vue';\n`;
     }
     if (type === 'methods') {
-      importStr += `import { show${name} } from './__VUE/${name.toLowerCase()}/index';\n`;
+      importStr += `import { show${name} } from './vueComponents/${name.toLowerCase()}/index';\n`;
       methods.push(`show${name}`);
     }
-    importScssStr += `import './__VUE/${name.toLowerCase()}/index.scss';\n`;
+    importScssStr += `import './vueComponents/${name.toLowerCase()}/index.scss';\n`;
     if (exclude != true) {
       packages.push(name);
     }

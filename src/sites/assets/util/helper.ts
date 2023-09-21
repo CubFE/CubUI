@@ -166,8 +166,8 @@ export const useThemeEditor = function () {
 
   onMounted(async () => {
     if (!store.init) {
-      // 固定自定义主题的访问链接: https://cubui.jd.com/theme/?theme=自定义变量的文件地址#/
-      // e.g. https://cubui.jd.com/theme/?theme=xxx.com%2variables.scss#/
+      // 固定自定义主题的访问链接: https://cubui.kakusoft.com/theme/?theme=自定义变量的文件地址#/
+      // e.g. https://cubui.kakusoft.com/theme/?theme=xxx.com%2variables.scss#/
       // vite issue https://github.com/vitejs/vite/issues/6894
 
       let customUrl = '';

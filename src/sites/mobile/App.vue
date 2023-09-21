@@ -3,7 +3,7 @@
     <div class="back" @click="goBack">
       <Left />
     </div>
-    {{ title }}3333
+    {{ title }}
     <div class="translate" @click="translateChange">
       <img
         src="https://img14.360buyimg.com/imagetools/jfs/t1/135168/8/21387/6193/625fa81aEe07cc347/55ad5bc2580c53a6.png"
@@ -24,7 +24,7 @@ onBeforeMount(() => {
   const { origin, hash, pathname } = window.top.location;
   const lang = hash.includes('zh-CN') ? 'zh-CN' : 'en-US';
   if (!isMobile && pathname.includes('demo')) {
-    window.location.href = `${origin}/h5/vue/4x/index.html#/${lang}/component/${hash.split('/').slice(-1)[0]}`;
+    window.location.href = `${origin}/h5/vue/v1/index.html#/${lang}/component/${hash.split('/').slice(-1)[0]}`;
   }
 });
 

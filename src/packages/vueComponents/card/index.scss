@@ -1,0 +1,211 @@
+@import '../price/index.scss';
+@import '../tag/index.scss';
+
+.cub-theme-dark {
+  .cub-card {
+    .cub-card__right {
+      color: $dark-color;
+    }
+  }
+}
+
+.cub-card {
+  width: 100%;
+  &.horizontal {
+    display: flex;
+  }
+  .cub-card__left {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+    background-color: $card-left-background-color;
+    border-radius: $card-left-border-radius;
+
+    > img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .cub-card__right {
+    flex: 1;
+    padding: 0 10px 8px;
+
+    .cub-card__right__title {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      word-break: break-all;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .cub-card__right__price {
+      display: flex;
+      align-items: center;
+      height: 18px;
+      line-height: 18px;
+      margin-top: 9px;
+
+      .cub-price {
+        .cub-price--symbol-large {
+          font-size: 12px;
+        }
+
+        .cub-price--large {
+          font-size: 18px;
+        }
+
+        .cub-price--decimal-large {
+          font-size: 12px;
+        }
+      }
+
+      .cub-card__right__price__origin {
+        &.cub-price {
+          margin-left: 2px;
+          color: #d2a448;
+
+          .cub-price--symbol-large {
+            font-size: 12px;
+          }
+
+          .cub-price--large {
+            font-size: 12px;
+          }
+
+          .cub-price--decimal-large {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .cub-card__right__other {
+      display: flex;
+      align-items: center;
+      padding: 5px 0 2px;
+      .cub-tag {
+        border: none;
+        padding: 0 2px;
+        margin-right: 5px;
+        font-size: $card-font-size-0;
+      }
+    }
+
+    .cub-card__right__shop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 4px;
+
+      .cub-card__right__shop__name {
+        line-height: 1.5;
+        color: #999;
+        font-size: 12px;
+      }
+    }
+  }
+
+  &.vertical {
+    background: $cell-background;
+    border-radius: $cell-border-radius;
+    box-shadow: $cell-box-shadow;
+    font-size: $cell-title-font;
+    color: $cell-color;
+    overflow: hidden;
+  }
+  .cub-card__thumb {
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-origin: content-box;
+    img {
+      width: 100%;
+    }
+  }
+  .cub-card__title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    word-break: break-all;
+    line-height: 2;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px 10px;
+  }
+  .cub-card__body {
+    font-size: 10px;
+    font-weight: 300;
+    padding: 5px 10px 10px;
+    .cub-card__price {
+      display: flex;
+      align-items: center;
+      height: 18px;
+      line-height: 18px;
+      margin-top: 9px;
+
+      .cub-price {
+        .cub-price--symbol-large {
+          font-size: 12px;
+        }
+
+        .cub-price--large {
+          font-size: 18px;
+        }
+
+        .cub-price--decimal-large {
+          font-size: 12px;
+        }
+      }
+
+      .cub-card__price__origin {
+        &.cub-price {
+          margin-left: 2px;
+          color: #d2a448;
+
+          .cub-price--symbol-large {
+            font-size: 12px;
+          }
+
+          .cub-price--large {
+            font-size: 12px;
+          }
+
+          .cub-price--decimal-large {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .cub-card__other {
+      display: flex;
+      align-items: center;
+      padding: 5px 0 2px;
+      .cub-tag {
+        border: none;
+        padding: 0 2px;
+        margin-right: 5px;
+        font-size: $card-font-size-0;
+      }
+    }
+
+    .cub-card__shop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 4px;
+
+      .cub-card__shop__name {
+        line-height: 1.5;
+        color: #999;
+        font-size: 12px;
+      }
+    }
+  }
+}

@@ -382,10 +382,10 @@ $swiper-pagination-item-height: var(--cub-swiper-pagination-item-height, 5px) !d
 $swiper-pagination-item-margin-right: var(--cub-swiper-pagination-item-margin-right, 6px) !default;
 $swiper-pagination-item-border-radius: var(--cub-swiper-pagination-item-border-radius, 50%) !default;
 
-//address
+//address// linear-gradient(90deg, $primary-color 0%, rgba($primary-color, 0.15) 100%)
 $address-region-tab-line: var(
   --cub-address-region-tab-line,
-  linear-gradient(90deg, $primary-color 0%, rgba($primary-color, 0.15) 100%)
+  $primary-color
 ) !default;
 $address-icon-color: var(--cub-address-icon-color, $primary-color) !default;
 $address-header-title-font-size: var(--cub-address-header-title-font-size, 18px) !default;

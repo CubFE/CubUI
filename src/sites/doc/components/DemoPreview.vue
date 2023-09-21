@@ -20,7 +20,7 @@ defineProps({
 <style lang="scss">
 .doc-demo-preview {
   position: fixed;
-  top: 50%;
+  top: 55%;
   z-index: 99;
   height: calc(100vh - 100px);
   max-height: 800px;

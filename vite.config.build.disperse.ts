@@ -9,7 +9,7 @@ configPkg.nav.map((item) => {
   item.packages.forEach((element) => {
     let { name, type, exclude } = element;
     if (exclude != true) {
-      input[name] = `./src/packages/__VUE/${name.toLowerCase()}/index${type === 'methods' ? '.ts' : '.vue'}`;
+      input[name] = `./src/packages/vueComponents/${name.toLowerCase()}/index${type === 'methods' ? '.ts' : '.vue'}`;
     }
   });
 });

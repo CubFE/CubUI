@@ -1,0 +1,185 @@
+<template>
+  <div class="demo full">
+    <h2>{{ translate('basic') }}</h2>
+    <cub-noticebar :text="translate('text')"></cub-noticebar>
+
+    <h2>{{ translate('scrollable') }}</h2>
+    <cub-noticebar :text="translate('textShort')" :scrollable="true"> </cub-noticebar>
+    <p />
+    <cub-noticebar :text="translate('text')" :scrollable="false"></cub-noticebar>
+
+    <h2>{{ translate('mode') }}</h2>
+    <cub-noticebar :close-mode="true" @click="closeFun">{{ translate('text') }} </cub-noticebar>
+    <p />
+    <cub-noticebar :close-mode="true" @click="closeFun">{{ translate('text') }} </cub-noticebar>
+    <p />
+    <h2>{{ translate('multiline') }}</h2>
+    <cub-noticebar :text="translate('text')" wrapable></cub-noticebar>
+
+    <h2>{{ translate('vertical') }}</h2>
+
+    <div class="interstroll-list">
+      <cub-noticebar
+        direction="vertical"
+        :list="horseLamp1"
+        :speed="10"
+        :standTime="1000"
+        @click="go"
+        :close-mode="true"
+      ></cub-noticebar>
+    </div>
+
+    <h2>{{ translate('complexAm') }}</h2>
+    <div class="interstroll-list">
+      <cub-noticebar direction="vertical" :list="data1" :speed="10" :standTime="2000" :complexAm="true"></cub-noticebar>
+    </div>
+    <h2>{{ translate('customAm') }}</h2>
+    <div class="interstroll-list">
+      <cub-noticebar direction="vertical" :height="50" :speed="10" :standTime="1000" :list="[]" @close="go">
+        <div
+          class="custom-item"
+          :data-index="index"
+          v-for="(item, index) in data1"
+          style="height: 50px; line-height: 50px"
+          :key="index"
+          >{{ item }}</div
+        >
+      </cub-noticebar>
+    </div>
+
+    <h2>{{ translate('customRightIcon') }}</h2>
+    <div class="interstroll-list">
+      <cub-noticebar direction="vertical" :list="horseLamp1" :speed="10" :standTime="1000">
+        <template #right-icon>
+          <Good />
+        </template>
+      </cub-noticebar>
+    </div>
+
+    <h2>{{ translate('scrollEvent') }}</h2>
+    <div class="interstroll-list">
+      <cub-noticebar
+        :text="`${translate('text')} - ${translate('scrollCount')}：[${acrossCount}]`"
+        @across-end="onAcrossEnd"
+      />
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import { reactive, toRefs, ref, defineComponent } from 'vue';
+import { Good } from '@cubfe/icons-vue';
+import { createComponent } from '@/packages/utils/create';
+const { translate } = createComponent('noticebar');
+import { useTranslate } from '@/sites/assets/util/useTranslate';
+
+const initTranslate = () =>
+  useTranslate({
+    'zh-CN': {
+      basic: '基础使用',
+      scrollable: '滚动播放',
+      mode: '通告栏--关闭模式',
+      multiline: '多行展示',
+      vertical: '垂直滚动',
+      complexAm: '纵向--复杂滚动动画',
+      customAm: '纵向--自定义滚动内容',
+      customRightIcon: '纵向--自定义右侧图标',
+      text: 'cubui 是移动端组件库，使用 Vue 语言来编写可以在 H5，小程序平台上的应用，帮助研发人员提升开发效率，改善开发体验。',
+      textShort: 'cubui 是移动端组件库',
+      horseLamp: ['NoticeBar 公告栏', 'Cascader 级联选择', 'DatePicker 日期选择器', 'CheckBox 复选按钮'],
+      scrollCount: '滚动次数',
+      scrollEvent: '横向 - 滚动结束事件'
+    },
+    'en-US': {
+      basic: 'Basic Usage',
+      scrollable: 'Scrollable',
+      mode: 'Mode',
+      multiline: 'Wrapable',
+      vertical: 'Vertical Scroll',
+      complexAm: 'Vertical Scroll Complex Animation',
+      customAm: 'Vertical Scroll Custom Style',
+      customRightIcon: 'Vertical Scroll Custom Right Icon',
+      text: 'cubui is a Jingdong style mobile terminal component library. It uses Vue language to write applications that can be used on H5 and applet platforms to help R & D personnel improve development efficiency and development experience.',
+      textShort: 'cubui is a mobile terminal component library.',
+      horseLamp: ['NoticeBar', 'Cascader', 'DatePicker', 'CheckBox'],
+      scrollCount: 'scroll count',
+      scrollEvent: 'across - scrolling end event'
+    }
+  });
+
+export default defineComponent({
+  components: { Good },
+  props: {},
+  setup() {
+    initTranslate();
+    const state = reactive({
+      horseLamp1: translate('horseLamp'),
+      horseLamp2: translate('horseLamp'),
+      horseLamp3: translate('horseLamp'),
+      text: translate('text'),
+      acrossCount: 0
+    });
+
+    const data1 = ref(['Noticebar 公告栏', 'Cascader 级联选择', 'DatePicker 日期选择器', 'CheckBox 复选按钮']);
+
+    const closeFun = () => {
+      console.log('hello world');
+    };
+    const go = (item: any) => {
+      console.log(item);
+    };
+
+    setTimeout(() => {
+      data1.value = [
+        'cubui 是移动端组件库，使用 Vue 语言来编写可以在 H5，小程序平台上的应用，帮助研发人员提升开发效率，改善开发体验。',
+        '级联选择 Cascader',
+        '日期选择器 DatePicker',
+        '复选按钮 CheckBox'
+      ];
+    }, 2000);
+
+    const onAcrossEnd = () => {
+      state.acrossCount++;
+      console.log('动画结束');
+    };
+
+    return {
+      ...toRefs(state),
+      closeFun,
+      go,
+      Good,
+      data1,
+      onAcrossEnd,
+      translate
+    };
+  }
+});
+</script>
+
+<style lang="scss" scoped>
+.cub-theme-dark {
+  .custom-item {
+    color: $dark-color;
+  }
+
+  a {
+    color: $dark-color;
+  }
+}
+
+.demo {
+  padding-bottom: 30px !important;
+
+  .interstroll-list {
+    background: rgba(251, 248, 220, 1);
+    color: #d9500b;
+  }
+
+  .custom-item {
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+</style>

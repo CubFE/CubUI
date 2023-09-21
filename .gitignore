@@ -16,6 +16,7 @@ src/packages/vscode-extension/*.vsix
 /coverage
 /tsc
 /site_docs
+/publish
 
 # local env files
 .env.local

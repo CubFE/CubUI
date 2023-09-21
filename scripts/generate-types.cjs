@@ -6,7 +6,7 @@ const sourceDir = path.resolve(__dirname, './../tsc/type/src/packages'); // ๆท่
 
 const toDir = path.resolve(__dirname, './../dist/types'); // ./../dist
 
-const basePath = path.join(toDir, '__VUE');
+const basePath = path.join(toDir, 'vueComponents');
 
 const fileList = [];
 
@@ -106,7 +106,7 @@ fs.cp(sourceDir, toDir, { recursive: true }, (err) => {
         let remain = `
 declare module 'vue' {
   interface GlobalComponents {
-      Nut${componentName}: typeof _default;
+      Cub${componentName}: typeof _default;
   }
 }`;
         let changeContent = content.replace(regex, `${preContent}${start} Install<${inputs[1]}>${end}${remain}`);

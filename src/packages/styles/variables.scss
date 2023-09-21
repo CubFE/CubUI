@@ -415,10 +415,10 @@ $swiper-pagination-item-height: var(--cub-swiper-pagination-item-height, 3px) !d
 $swiper-pagination-item-margin-right: var(--cub-swiper-pagination-item-margin-right, 7px) !default;
 $swiper-pagination-item-border-radius: var(--cub-swiper-pagination-item-border-radius, 2px) !default;
 
-//address
+//address,linear-gradient(90deg, $primary-color 0%, rgba(#fa2c19, 0.15) 100%)
 $address-region-tab-line: var(
   --cub-address-region-tab-line,
-  linear-gradient(90deg, $primary-color 0%, rgba(#fa2c19, 0.15) 100%)
+  $primary-color
 ) !default;
 $address-icon-color: var(--cub-address-icon-color, $primary-color) !default;
 $address-header-title-font-size: var(--cub-address-header-title-font-size, 18px) !default;
@@ -426,7 +426,7 @@ $address-header-title-color: var(--cub-address-header-title-color, #262626) !def
 $address-region-tab-font-size: var(--cub-address-region-tab-font-size, 13px) !default;
 $address-region-tab-color: var(--cub-address-region-tab-color, #1d1e1e) !default;
 $address-region-tab-active-item-font-weight: var(--cub-address-region-tab-active-item-font-weight, bold) !default;
-$address-region-tab-line-border-radius: var(--cub-address-region-tab-line-border-radius, 0) !default;
+$address-region-tab-line-border-radius: var(--cub-address-region-tab-line-border-radius, 3px) !default;
 $address-region-tab-line-opacity: var(--cub-address-region-tab-line-opacity, 1) !default;
 $address-region-item-color: var(--cub-address-region-item-color, #333) !default;
 $address-region-item-font-size: var(--cub-address-region-item-font-size, $font-size-1) !default;
@@ -511,8 +511,8 @@ $fixednav-btn-bg: var(
 $fixednav-item-active-color: var(--cub-fixednav-item-active-color, $primary-color) !default;
 
 // NoticeBar
-$noticebar-background: var(--cub-noticebar-background, rgba(251, 248, 220, 1)) !default;
-$noticebar-color: var(--cub-noticebar-color, #d9500b) !default;
+$noticebar-background: var(--cub-noticebar-background, rgb(219 229 255)) !default;
+$noticebar-color: var(--cub-noticebar-color, $primary-color) !default;
 $noticebar-font-size: var(--cub-noticebar-font-size, 14px) !default;
 $noticebar-across-height: var(--cub-noticebar-across-height, 40px) !default;
 $noticebar-across-line-height: var(--cub-noticebar-across-line-height, 24px) !default;

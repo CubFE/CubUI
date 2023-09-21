@@ -1,6 +1,6 @@
 {
-  "name": "CubUI",
-  "version": "2.0.0",
+  "name": "@cubfe/cubui",
+  "version": "1.0.1",
   "description": "轻量级移动端 Vue2、Vue3 组件库",
   "main": "dist/cubui.umd.js",
   "module": "dist/cubui.es.js",
@@ -56,7 +56,7 @@
     }
   },
   "dependencies": {
-    "@cubfe/icons-vue": "^0.1.5",
+    "@cubfe/icons-vue": "^0.2.4",
     "sass": "^1.50.0",
     "vue-router": "^4.2.2"
   },
@@ -64,6 +64,7 @@
     "@commitlint/cli": "^10.0.0",
     "@commitlint/config-conventional": "^10.0.0",
     "@napi-rs/canvas": "^0.1.39",
+    "@tarojs/taro": "^3.6.15",
     "@types/node": "^17.0.16",
     "@vitejs/plugin-vue": "^4.2.0",
     "@vitejs/plugin-vue-jsx": "^3.0.1",

@@ -11,8 +11,8 @@ configPkg.nav.map((item) => {
     const { name, exclude, taro } = element;
     if (taro === false) return; // 排除非 Taro 组件
     if (exclude != true) {
-      const filePath = path.join(`./src/packages/__VUE/${name.toLowerCase()}/index.taro.vue`);
-      input[name] = `./src/packages/__VUE/${name.toLowerCase()}/index${fs.existsSync(filePath) ? '.taro' : ''}.vue`;
+      const filePath = path.join(`./src/packages/vueComponents/${name.toLowerCase()}/index.taro.vue`);
+      input[name] = `./src/packages/vueComponents/${name.toLowerCase()}/index${fs.existsSync(filePath) ? '.taro' : ''}.vue`;
     }
     // }
   });

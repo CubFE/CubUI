@@ -8,31 +8,6 @@
       />
       <div class="online-tips">复制代码</div>
     </div>
-    <!-- <div class="online-part">
-      <template v-if="codeType === 'vue'">
-        <a class="list" :href="playgroundUrl" target="_blank">
-          <img
-            class="online-icon"
-            src="https://img11.360buyimg.com/imagetools/jfs/t1/159023/13/28499/5084/620f4c48E244573d5/28bfddee9718336e.png"
-          />
-          <div class="online-tips">codesandbox</div>
-        </a>
-      </template>
-      <a class="list" :href="codeSandBoxUrl" target="_blank">
-        <img
-          class="online-icon"
-          src="https://img12.360buyimg.com/imagetools/jfs/t1/214225/34/8715/7002/61c31bf1E69324ee9/7a452063eba88be4.png"
-        />
-        <div class="online-tips">在线调试</div>
-      </a>
-      <div class="list" @click="copyCode">
-        <img
-          class="online-icon"
-          src="https://img10.360buyimg.com/imagetools/jfs/t1/142615/10/25537/3671/61c31e6eE3ba7fb90/d1953e2b47e40e86.png"
-        />
-        <div class="online-tips">复制代码</div>
-      </div>
-    </div> -->
   </div>
 </template>
 <script setup lang="ts">
@@ -129,7 +104,7 @@ onMounted(() => {
   });
   const query = 'file=/src/App.vue';
   playgroundUrl.value = `https://codesandbox.io/api/v1/sandboxes/define?parameters=${parameters}&query=${query}&resolutionHeight=736`;
-  codeSandBoxUrl.value = `https://cubui.jd.com/playground/${serialize()}`;
+  codeSandBoxUrl.value = `https://cubui.kakusoft.com/playground/${serialize()}`;
 });
 const copyCode = () => {
   const sourceValue = decompressText(onlineCode.value.dataset.value);

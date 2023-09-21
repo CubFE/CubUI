@@ -1,0 +1,20 @@
+<view :class="classes" @touchstart="onTouchStart" @touchmove="onTouchMove">
+  <view class="cub-rate-item" v-for="n in Number(count)" :key="n" ref="rateRefs" :id="'rateRefs-' + refRandomId + n"
+    :style="n < Number(count) ? { marginRight: pxCheck(spacing) } : {}">
+    <view class="cub-rate-item__icon--full">
+      <component
+        :is="renderIcon(customIcon,{width:size,height:size,size,color:n <= modelValue ? activeColor : voidColor})"
+        class="cub-rate-item__icon" :class="{ 'cub-rate-item__icon--disabled': disabled || n > modelValue }"
+        @click="onClick(1, n)"></component>
+    </view>
+    <view class="cub-rate-item__icon--half" v-if="allowHalf && Number(modelValue) + 1 > n">
+      <component
+        :is="renderIcon(customIcon,{width:size,height:size,size,color:n <= Number(modelValue) + 1 ? activeColor : voidColor})"
+        class="cub-rate-item__icon" @click="onClick(2, n)"></component>
+    </view>
+    <view class="cub-rate-item__icon--half" v-else-if="allowHalf && Number(modelValue) + 1 < n">
+      <component :is="renderIcon(customIcon,{width:size,height:size,size,color:voidColor})"
+        class="cub-rate-item__icon cub-rate-item__icon--disabled" @click="onClick(2, n)"></component>
+    </view>
+  </view>
+</view>

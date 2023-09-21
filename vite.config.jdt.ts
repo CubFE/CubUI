@@ -14,12 +14,12 @@ export default defineConfig({
     host: '0.0.0.0',
     proxy: {
       '/devServer': {
-        target: 'https://cubui.jd.com',
+        target: 'https://cubui.kakusoft.com',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/devServer/, '')
       },
       '/devTheme': {
-        target: 'https://cubui.jd.com/theme/source',
+        target: 'https://cubui.kakusoft.com/theme/source',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/devTheme/, '')
       }

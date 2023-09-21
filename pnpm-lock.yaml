@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@cubfe/icons-vue':
-    specifier: ^0.1.5
-    version: 0.1.5
+    specifier: ^0.2.4
+    version: 0.2.4
   sass:
     specifier: ^1.50.0
     version: 1.50.0
@@ -25,6 +25,9 @@ devDependencies:
   '@napi-rs/canvas':
     specifier: ^0.1.39
     version: 0.1.39
+  '@tarojs/taro':
+    specifier: ^3.6.15
+    version: 3.6.15(postcss@8.4.29)(vue@3.3.4)
   '@types/node':
     specifier: ^17.0.16
     version: 17.0.16
@@ -554,8 +557,8 @@ packages:
     engines: {node: '>=v10.22.0'}
     dev: true
 
-  /@cubfe/icons-vue@0.1.5:
-    resolution: {integrity: sha512-YklwrdF9d/6J6SlCD9j2TEgf4SLXdDDmHa3IWyjho6YvKyMGagJrcz6HMLXzXu6/0ZqoBfQ9AcSw9ysyj2eG9w==}
+  /@cubfe/icons-vue@0.2.4:
+    resolution: {integrity: sha512-ubdQTjqHuub2R/+bIOz8ch3kF9GIEWg4ziXk/hXwO4o4G34m2zF4HpcuZ2OOZHsaAIXUzCaRjnQuYcOOu9ZjIA==}
     dev: false
 
   /@esbuild/android-arm64@0.17.19:
@@ -1013,6 +1016,51 @@ packages:
       '@types/estree': 1.0.1
       estree-walker: 2.0.2
       picomatch: 2.3.1
+    dev: true
+
+  /@tarojs/api@3.6.15:
+    resolution: {integrity: sha512-ZfvY6ynnpwKB2+8EzK2VpFmLvSBE5Km6GLPFChQBga/Jbkc1CkUQ+iD5zuq42hv6WRB3E+mFVDkVG3JAhq2MUg==}
+    dependencies:
+      '@babel/runtime': 7.22.11
+      '@tarojs/runtime': 3.6.15
+      '@tarojs/shared': 3.6.15
+    dev: true
+
+  /@tarojs/runtime@3.6.15:
+    resolution: {integrity: sha512-7Xw+7ApdAtZ6N1IIp1i9SsCNGBiFYpQ90lkQZwiJE8eybgagmymXiyeaWqwNdoF4awMNNTcLFZzWlkgqJwGH2Q==}
+    dependencies:
+      '@tarojs/shared': 3.6.15
+      lodash-es: 4.17.21
+    dev: true
+
+  /@tarojs/shared@3.6.15:
+    resolution: {integrity: sha512-FGhl2Kkjs9ie9NAX2yTgd+MORQ4bypJfVduWmW7nhqFDVVgsjWm0HAeCUGCSXHBHSiJjIipCo5IcxERhdIlBeg==}
+    dev: true
+
+  /@tarojs/taro@3.6.15(postcss@8.4.29)(vue@3.3.4):
+    resolution: {integrity: sha512-sKoEUq41ncba3JB6LiNFi+vybqBgczzXsz26IaoAGlrr96+6qOd4TOPhcHOfIRQBIDD3axn/7D3FMk9K4xs1jQ==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/webpack': '*'
+      '@types/webpack-dev-server': '*'
+      postcss: '*'
+      vue: '*'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/webpack':
+        optional: true
+      '@types/webpack-dev-server':
+        optional: true
+      postcss:
+        optional: true
+      vue:
+        optional: true
+    dependencies:
+      '@tarojs/api': 3.6.15
+      '@tarojs/runtime': 3.6.15
+      postcss: 8.4.29
+      vue: 3.3.4
     dev: true
 
   /@types/chai-subset@1.3.3:
@@ -3732,6 +3780,10 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       p-locate: 5.0.0
+    dev: true
+
+  /lodash-es@4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
     dev: true
 
   /lodash.merge@4.6.2:

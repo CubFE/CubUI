@@ -27,7 +27,7 @@ export default defineConfig({
     coverage: {
       provider: 'v8'
     },
-    include: ['src/packages/__VUE/**/*.(test|spec).(ts|tsx)'],
+    include: ['src/packages/vueComponents/**/*.(test|spec).(ts|tsx)'],
     reporters: ['default', 'html']
   }
 });

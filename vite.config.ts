@@ -10,18 +10,18 @@ import { compressText } from './src/sites/doc/components/demo-block/basedUtil';
 const resolve = path.resolve;
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/h5/vue/4x/',
+  base: '/h5/vue/v1/',
   server: {
     port: 2023,
     host: '0.0.0.0',
     proxy: {
       '/devServer': {
-        target: 'https://cubui.jd.com',
+        target: 'https://cubui.kakusoft.com',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/devServer/, '')
       },
       '/devTheme': {
-        target: 'https://cubui.jd.com/theme/source',
+        target: 'https://cubui.kakusoft.com/theme/source',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/devTheme/, '')
       }
@@ -97,13 +97,13 @@ export default defineConfig({
   ],
   build: {
     target: 'es2015',
-    outDir: './dist/h5/vue/4x/',
+    outDir: './dist/h5/vue/v1/',
     // assetsDir: config.version,
     cssCodeSplit: false,
     cssTarget: ['chrome61'],
     rollupOptions: {
       input: {
-        // doc: resolve(__dirname, 'index.html'),
+        doc: resolve(__dirname, 'index.html'),
         mobile: resolve(__dirname, 'demo.html')
       },
       output: {

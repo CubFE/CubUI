@@ -1,0 +1,243 @@
+<template>
+  <view class="cub-searchbar" :style="searchbarStyle">
+    <view v-if="$slots.leftout" class="cub-searchbar__search-icon cub-searchbar__left-search-icon">
+      <slot name="leftout"></slot>
+    </view>
+    <view :class="[`cub-searchbar__search-input`, shape]" :style="{ ...inputSearchbarStyle, ...focusCss }">
+      <view v-if="$slots.leftin" class="cub-searchbar__search-icon cub-searchbar__iptleft-search-icon">
+        <slot name="leftin"></slot>
+      </view>
+      <view :class="['cub-searchbar__input-inner', $slots.rightin && 'cub-searchbar__input-inner-absolute']">
+        <form class="cub-searchbar__input-form" action="#" onsubmit="return false" @submit.prevent="handleSubmit">
+          <input
+            ref="inputsearch"
+            :class="['cub-searchbar__input-bar', clearable && 'cub-searchbar__input-bar_clear']"
+            :type="inputType"
+            :maxlength="maxLength"
+            :placeholder="placeholder || translate('placeholder')"
+            :value="modelValue"
+            :confirm-type="confirmType"
+            :disabled="disabled"
+            :readonly="readonly"
+            @click="clickInput"
+            @input="valueChange"
+            @focus="valueFocus"
+            @blur="valueBlur"
+            @confirm="handleSubmit"
+            :style="styleSearchbar"
+          />
+        </form>
+      </view>
+      <view :class="['cub-searchbar__input-inner-icon', $slots.rightin && 'cub-searchbar__input-inner-icon-absolute']">
+        <view
+          @click="handleClear"
+          class="cub-searchbar__search-icon cub-searchbar__input-clear"
+          v-if="clearable"
+          v-show="String(modelValue).length > 0"
+        >
+          <template v-if="$slots['clear-icon']">
+            <slot name="clear-icon"></slot>
+          </template>
+          <component :is="renderIcon(clearIcon)" v-else></component>
+        </view>
+        <view v-if="$slots.rightin" class="cub-searchbar__search-icon cub-searchbar__iptright-search-icon">
+          <slot name="rightin"></slot>
+        </view>
+      </view>
+    </view>
+    <view v-if="$slots.rightout" class="cub-searchbar__search-icon cub-searchbar__right-search-icon">
+      <slot name="rightout"></slot>
+    </view>
+  </view>
+</template>
+
+<script lang="ts">
+import { toRefs, reactive, computed, ref, onMounted, PropType, Ref, CSSProperties } from 'vue';
+import { createComponent, renderIcon } from '@/packages/utils/create';
+import { CloseCircle } from '@cubfe/icons-vue-taro';
+import { TextAlign } from './type';
+const { create, translate } = createComponent('searchbar');
+export type confirmTextType = 'send' | 'search' | 'next' | 'go' | 'done';
+
+export default create({
+  props: {
+    modelValue: {
+      type: [String, Number],
+      default: ''
+    },
+    inputType: {
+      type: String,
+      default: 'text'
+    },
+    shape: {
+      type: String,
+      default: 'round'
+    },
+    maxLength: {
+      type: [String, Number],
+      default: '9999'
+    },
+    placeholder: {
+      type: String,
+      default: ''
+    },
+    clearable: {
+      type: Boolean,
+      default: true
+    },
+    clearIcon: {
+      type: Object,
+      default: () => CloseCircle
+    },
+    background: {
+      type: String,
+      default: ''
+    },
+    inputBackground: {
+      type: String,
+      default: ''
+    },
+    focusStyle: {
+      type: Object,
+      default: () => ({})
+    },
+    autofocus: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    readonly: {
+      type: Boolean,
+      default: false
+    },
+    inputAlign: {
+      type: String,
+      default: 'left'
+    },
+    confirmType: {
+      type: String as PropType<confirmTextType>,
+      default: 'done'
+    }
+  },
+
+  emits: [
+    'change',
+    'update:modelValue',
+    'blur',
+    'focus',
+    'clear',
+    'search',
+    'click-input',
+    'click-left-icon',
+    'click-right-icon'
+  ],
+
+  setup(props, { emit }) {
+    const state = reactive({
+      active: false
+    });
+
+    const searchbarStyle = computed(() => {
+      return {
+        background: props.background
+      };
+    });
+    const inputSearchbarStyle = computed(() => {
+      return {
+        background: props.inputBackground
+      };
+    });
+
+    const valueChange = (event: Event) => {
+      const input = event.target as HTMLInputElement;
+      let val = input.value;
+
+      if (props.maxLength && val.length > Number(props.maxLength)) {
+        val = val.slice(0, Number(props.maxLength));
+      }
+      emit('update:modelValue', val, event);
+      emit('change', val, event);
+    };
+
+    const focusCss = ref({});
+    const valueFocus = (event: Event) => {
+      const input = event.target as HTMLInputElement;
+      let value = input.value;
+      state.active = true;
+      focusCss.value = props.focusStyle;
+      emit('focus', value, event);
+    };
+
+    const valueBlur = (event: Event) => {
+      setTimeout(() => {
+        state.active = false;
+      }, 0);
+
+      const input = event.target as HTMLInputElement;
+      let value = input.value;
+      if (props.maxLength && value.length > Number(props.maxLength)) {
+        value = value.slice(0, Number(props.maxLength));
+      }
+      focusCss.value = {};
+      emit('blur', value, event);
+    };
+
+    const handleClear = (event: Event) => {
+      emit('update:modelValue', '', event);
+      emit('change', '', event);
+      emit('clear', '');
+    };
+
+    const handleSubmit = () => {
+      emit('search', props.modelValue);
+    };
+
+    const clickInput = (event: Event) => {
+      emit('click-input', event);
+    };
+
+    const leftIconClick = (event: Event) => {
+      emit('click-left-icon', props.modelValue, event);
+    };
+
+    const rightIconClick = (event: Event) => {
+      emit('click-right-icon', props.modelValue, event);
+    };
+
+    const styleSearchbar = computed(() => {
+      const style: CSSProperties = {
+        textAlign: props.inputAlign as TextAlign
+      };
+      return style;
+    });
+    const inputsearch: Ref<HTMLElement | null> = ref(null);
+    onMounted(() => {
+      if (props.autofocus) {
+        (inputsearch.value as HTMLElement).focus();
+      }
+    });
+
+    return {
+      renderIcon,
+      inputsearch,
+      ...toRefs(state),
+      valueChange,
+      valueFocus,
+      valueBlur,
+      handleClear,
+      handleSubmit,
+      searchbarStyle,
+      inputSearchbarStyle,
+      focusCss,
+      translate,
+      clickInput,
+      leftIconClick,
+      rightIconClick,
+      styleSearchbar
+    };
+  }
+});
+</script>

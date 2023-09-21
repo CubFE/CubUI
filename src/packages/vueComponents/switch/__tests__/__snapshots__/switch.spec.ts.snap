@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`render ok 1`] = `
+"<view class=\\"cub-switch cub-switch-close cub-switch-base\\">
+  <view class=\\"cub-switch-button\\">
+    <!--v-if-->
+    <!--v-if-->
+  </view>
+</view>"
+`;

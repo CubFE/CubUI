@@ -173,7 +173,7 @@ const createTest = (paths) => {
   /**生成测试文件 */
   const sourcePath = paths.sourcePath;
   const name = sourcePath.substring(sourcePath.lastIndexOf('/') + 1);
-  const testPath = path.join(`src/packages/__VUE/${name}/__tests__`);
+  const testPath = path.join(`src/packages/vueComponents/${name}/__tests__`);
   if (!fs.existsSync(testPath)) fs.mkdirSync(testPath);
   const testFilePath = path.join(testPath, `${name}.spec.ts`);
   if (!fs.existsSync(testFilePath)) fs.writeFileSync(testFilePath, `import { mount } from '@vue/test-utils';`);
@@ -193,7 +193,7 @@ const updateConfig = () => {
 const createDir = () => {
   const componentName = componentConfig.name.toLowerCase();
   const componentType = nav.find((navitem) => navitem.name === componentConfig.cType).enName;
-  const sourcePath = path.join(`src/packages/__VUE/${componentName}`);
+  const sourcePath = path.join(`src/packages/vueComponents/${componentName}`);
   const taroPath = path.join(`packages/cubui-taro-demo/src/${componentType}`);
   if (!fs.existsSync(sourcePath)) fs.mkdirSync(sourcePath);
   if (!fs.existsSync(taroPath)) fs.mkdirSync(`${taroPath}/pages`);

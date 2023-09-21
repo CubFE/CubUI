@@ -13,7 +13,7 @@ config.nav.map((item) => {
     tasks.push(
       fs
         .copy(
-          path.resolve(__dirname, `../src/packages/__VUE/${folderName}/index.scss`),
+          path.resolve(__dirname, `../src/packages/vueComponents/${folderName}/index.scss`),
           path.resolve(__dirname, `../dist/packages/${folderName}/index.scss`)
         )
         .then((success) => {

@@ -24,7 +24,7 @@ const removeFile = async (url) => {
 const copy = async () => {
   let configPath = `src/config.json`;
   let configPkgPath = `package.json`;
-  let nutuiDocsConfigPath = `${targetBaseUrl}/config.json`;
+  let cubuiDocsConfigPath = `${targetBaseUrl}/config.json`;
 
   // 判断 site_docs 文件是否存在根路径中
   const existsRoot = await fse.pathExists(targetBaseUrl);
@@ -36,9 +36,9 @@ const copy = async () => {
     packages.forEach((item) => {
       if (item.show) {
         let cmpName = item.name.toLowerCase();
-        let docpath = `src/packages/__VUE/${cmpName}/doc.md`;
-        let docEnPath = `src/packages/__VUE/${cmpName}/doc.en-US.md`;
-        let doctaropath = `src/packages/__VUE/${cmpName}/doc.taro.md`;
+        let docpath = `src/packages/vueComponents/${cmpName}/doc.md`;
+        let docEnPath = `src/packages/vueComponents/${cmpName}/doc.en-US.md`;
+        let doctaropath = `src/packages/vueComponents/${cmpName}/doc.taro.md`;
         fse.readFile(docpath, (err, data) => {
           if (!err) {
             copyFile(docpath, `${targetBaseUrl}/docs/${cmpName}/doc.md`);
@@ -66,14 +66,14 @@ const copy = async () => {
     nav: [],
     docs: []
   };
-  fse.outputJSON(nutuiDocsConfigPath, obj, () => {
-    const docsConfig = fse.readJson(nutuiDocsConfigPath);
+  fse.outputJSON(cubuiDocsConfigPath, obj, () => {
+    const docsConfig = fse.readJson(cubuiDocsConfigPath);
     docsConfig.version = fromPkgConfig.version;
     docsConfig.nav = fromConfig.nav;
     docsConfig.docs = fromConfig.docs;
-    docsConfig.demoUrl = 'https://cubui.jd.com/3x/demo.html#';
+    docsConfig.demoUrl = 'https://cubui.kakusoft.com/3x/demo.html#';
     fse
-      .writeJson(nutuiDocsConfigPath, docsConfig, {
+      .writeJson(cubuiDocsConfigPath, docsConfig, {
         spaces: 2
       })
       .then(() => {
